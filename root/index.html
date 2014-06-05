@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>STIHK - Sør-Trøndelag Ishockeykrets</title>
+		<link rel="icon" href="./assets/img/favicon.png">
+		<link rel="stylesheet" href="./assets/css/style.css">
+	</head>
+	<body>
+		<header>
+			<a href="./hjem" alt="STIHK - Sør-Trøndelag Ishockeykrets"><div class="logo"></div></a>
+			<table class="navigation">
+				<tr>
+					<td>
+						<a href="./istider" alt="Istider">istider</a>
+					</td>
+					<td>
+						<a href="./serier" alt="Serier">serier</a>
+					</td>
+					<td>
+						<a href="./arrangement" alt="Arrangement">arrangement</a>
+					</td>
+					<td>
+						<a href="./dommere" alt="Dommere">dommere</a>
+					</td>
+					<td>
+						<a href="./kontakter" alt="Kontakter">kontakter</a>
+					</td>
+					<td>
+						<a href="#annet" alt="Annet">annet</a>
+					</td>
+					<td class="button">
+						<a href="#logginn" alt="Logg inn">logg inn</a>
+					</td>
+				</tr>
+			</table>
+			<div class="login hidden">
+				<form method="post" action="">
+					<input type="text" name="username" value="" placeholder="Brukernavn" />
+					<input type="password" name="password" value="" placeholder="Passord" />
+					<input type="submit" name="submit" value="Logg inn" />
+				</form>
+			</div>
+			<div class="morenav hidden">
+				<table>
+					<tr>
+						<td>
+							<a href="./omoss" alt="Om oss">om oss</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="./bestemmelser" alt="Bestemmelser">bestemmelser</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="./dokumenter" alt="Dokumenter">dokumenter</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="./rom" alt="rom">rom</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="./lenker" alt="Lenker">lenker</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</header>
+		<div class="header">
+			<div class="weather">
+				<table>
+					<tr>
+						<td class="headline">Trondheim Sentrum</td>
+					</tr>
+					<tr>
+						<td location="trondheim" class="center"><span class="loading" title="Loading..."></span></td>
+					</tr>
+					<tr>
+						<td class="celsius"><span class="temperature" location="trondheim">N/A</span> °C</td>
+					</tr>
+					<tr>
+						<td class="headline">Hølonda Utebane</td>
+					</tr>
+					<tr>
+						<td location="korsvegen" class="center"><span class="loading" title="Loading..."></span></td>
+					</tr>
+					<tr>
+						<td class="celsius"><span class="temperature" location="korsvegen">N/A</span> °C</td>
+					</tr>
+				</table>
+			</div>
+			<div class="clock"></div>
+			<div class="newsfeed">
+				
+			</div>
+		</div>
+		<div class="shadow"></div>
+		<div class="newspaper">
+			<h1 class="center"><a href="http://www.adressa.no/100Sport/ishockey/" class="normal" target="_blank">Ishockey på Adressa.no</a></h1>
+			<table class="adressa"></table>
+		</div>
+		<div class="news">
+			
+		</div>
+		<div class="widgets">
+			
+		</div>
+	</body>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<!--<script src="/socket.io/socket.io.js"></script>-->
+	<script src="./assets/js/script.js"></script>
+</html>
