@@ -242,6 +242,42 @@ footer {
 	right: 10px;
 }
 
+/* DASHBOARD */
+
+.dashboardmenu {
+	float: left;
+	height: 513px;
+	width: 250px;
+	background-color: rgb(249,249,249);
+	border-right: 2px solid rgb(229,229,229);
+}
+
+.dashboardmenu .menu {
+	margin-top: -2px;
+}
+
+.dashboardmenu .menu td {
+	width: 250px;
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-left: -4px;
+	font-weight: bold;
+	background-color: rgba(200, 200, 200, 0.1);
+	border-bottom: 1px solid rgb(229,229,229);
+}
+
+.dashboardmenu .menu td a {
+	color: #000;
+	text-decoration: none;
+}
+
+.dashboardmenu .menu td:hover {
+	background-color: rgba(200, 200, 200, 0.3);
+	cursor: pointer;
+}
+
 @-webkit-keyframes loading {
 	from { background-position:  0px  0px; }
 		to { background-position: 0px -570px; }

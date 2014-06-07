@@ -31,6 +31,12 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 		window.location.href = "./" + $(this).find(":selected").text().replace(/ /g, "");
 	});
 
+	$('.menu td').click(function(e) {
+		e.preventDefault();
+		var link = $(this).children().attr("href");
+		window.location.href = link;
+	});
+
 	$('.notification a').click(function() {
 		if($(this).attr("href") === "#close") {
 			closeNotification($(this).parent());
