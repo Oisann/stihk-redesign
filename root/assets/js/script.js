@@ -3,8 +3,12 @@ var trondheim_url = "https://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondhe
 	adressa_hockey = "https://oisann.net/adressa/ishockey/",
 	symbol_url_start = "http://symbol.yr.no/grafikk/sym/b38/"; //Start of weathersymbol. Ends with .png
 $(document).ready(function() { //no need for this, since i load it at the bottom of the page. EH
-	var path = window.location.pathname,
-		filename = path.match(/.*\/([^/]+)\.([^?]+)/i)[1];
+	var path = window.location.pathname;
+	try {
+		var filename = path.match(/.*\/([^/]+)\.([^?]+)/i)[1];
+	} catch(err) {
+		var filename = 'index';
+	}
 	$('html').addClass(filename);
 	updateClock();
 	updateWeather();
