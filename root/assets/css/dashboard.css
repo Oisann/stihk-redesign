@@ -64,7 +64,12 @@
 		width: 150px;
 	}
 
+	.dashboardmenu, .dashboardwindow {
+		height: 65%;
+	}
+
 	.dashboardwindow {
 		margin-left: 152px;
+		width: 1px;
 	}
 }
