@@ -80,6 +80,19 @@
 		width: 93%;
 		margin-left: 20px;
 	}
+	.weather {
+		-webkit-transform: scale(0.7);
+		-moz-transform: scale(0.7);
+		-ms-transform: scale(0.7);
+		-o-transform: scale(0.7);
+		transform: scale(0.7);
+	}
+	.header {
+		padding-top: 0px;
+	}
+	.background {
+		height: 300px;
+	}
 }
 
 @media only screen and (max-width: 459px) {
