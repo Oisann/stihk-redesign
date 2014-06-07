@@ -41,10 +41,26 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	});
 });
 
+function addNewsfeedItem(title, text, link) {
+	$('.newsfeed').append("<span class=\"feeditem\"><a href=\"" + link + "\" alt=\"" + title + "\"><strong>" + title + "</strong>: " + text + "</a></span>");
+	startNewsfeed();
+}
+
+function startNewsfeed() {
+	var scrollspeed = $('.newsfeed').text().length * 100;
+	$('.newsfeed').marquee({
+		duration: scrollspeed,
+		pauseOnHover: true,
+		duplicated: true
+	});
+}
+
 function addAdressaArticle(json) {
 	var adressa = $('table.adressa');
 	adressa.html(""); //clear all articles
-	for(var i=0; i<=3; i++) {
+	var max = 4;
+	for(var i=0; i<max; i++) {
+		if(i == 0) addNewsfeedItem("[Adressa] " + json[i].headline, json[i].lead, json[i].link);
 		adressa.append("<tr><td><a href=\"" + json[i].link + "\" class=\"normal\" target=\"_blank\"><img class=\"article\" src=\"" + json[i].image + "\" alt=\"" + json[i].headline + "\" /></a></td><td><h3 class=\"headline\"><a href=\"" + json[i].link + "\" class=\"normal\" target=\"_blank\">" + json[i].headline + "</a></h3>" + json[i].lead + "</td></tr>");
 	}
 }
