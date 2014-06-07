@@ -205,18 +205,40 @@ table.adressa .headline {
 }
 
 .widgets {
-	min-height: 1000px;
 	width: 33.33%;
 	float: left;
 }
 
 footer {
 	border-top: 2px solid rgb(229,229,229);
+	background-color: rgb(249,249,249);
 	text-align: center;
 	float: left;
 	width: 100%;
 	padding-top: 50px;
 	height: 60px;
+}
+
+.notification {
+	float: left;
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	background-color: rgba(0, 0, 0, 0.6);
+	height: 100px;
+	padding: 5px;
+	padding-left: 10px;
+	width: 300px;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.notification a {
+	position: absolute;
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+	right: 10px;
 }
 
 @-webkit-keyframes loading {

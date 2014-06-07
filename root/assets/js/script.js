@@ -8,7 +8,6 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	updateAdressa();
 	setInterval(function() {
 		updateWeather();
-		updateAdressa();
 	}, 12 * 60000); //update every hour
 
 	setInterval(function() {
@@ -24,8 +23,18 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 		});
 	});
 
+	socket.on('notification', function(data) {
+		notification(data.title, data.line1, data.line2);
+	});
+
 	$(".mininav").change(function() {
 		window.location.href = "./" + $(this).find(":selected").text().replace(/ /g, "");
+	});
+
+	$('.notification a').click(function() {
+		if($(this).attr("href") === "#close") {
+			closeNotification($(this).parent());
+		}
 	});
 
 	$('.navigation a').click(function() {
@@ -49,6 +58,34 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	    }
 	});
 });
+
+function closeNotification(element) {
+	element.fadeOut(function() {
+		onCloseNotification(element);
+		element.remove();
+	});
+}
+
+function onCloseNotification(element) {
+	var bottomPX = parseInt(element.css('bottom'));
+	$('.notification').each(function(index) {
+		var new_bottomPX = parseInt($(this).css('bottom'));
+		if(new_bottomPX >= bottomPX) {
+			new_bottomPX -= 120;
+			$(this).animate({bottom: new_bottomPX + "px"}, 500);
+		}
+	});
+}
+
+function notification(title, line1, line2) {
+	var count = $('.notification').length,
+		id = +new Date + parseInt(Math.random() * 1000);
+	$('body').append('<div id="' + id + '" class="notification" style="bottom: ' + (count * 120 + 20) + 'px; display: none;"><a href="#close">x</a><h3>' + title + '</h3>' + line1 + '<br />' + line2 + '</div>');
+	$('#' + id).fadeIn();
+	setTimeout(function() {
+		closeNotification($('#' + id));
+	}, 15000);
+}
 
 function addNewsfeedItem(title, text, link) {
 	$('.newsfeed').append("<span class=\"feeditem\"><a href=\"" + link + "\" alt=\"" + title + "\"><strong>" + title + "</strong>: " + text + "</a></span>");
