@@ -88,7 +88,7 @@ function notification(title, line1, line2) {
 }
 
 function addNewsfeedItem(title, text, link) {
-	$('.newsfeed').append("<span class=\"feeditem\"><a href=\"" + link + "\" alt=\"" + title + "\"><strong>" + title + "</strong>: " + text + "</a></span>");
+	$('.newsfeed').append("<span class=\"feeditem\"><a href=\"" + link + "\" target=\"_blank\" alt=\"" + title + "\"><strong>" + title + "</strong>: " + text + "</a></span>");
 	startNewsfeed();
 }
 
