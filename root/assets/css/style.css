@@ -1,4 +1,4 @@
-html { font: normal 14px verdana,arial,helvetica,sans-serif; }
+html { font: normal 14px verdana,arial,helvetica,sans-serif; overflow-x: hidden; }
 body { margin: 0px; }
 a.normal { text-decoration: none; color: #000; }
 
@@ -55,6 +55,11 @@ header {
 	-moz-filter: blur(8px);
 	-o-filter: blur(8px);
 	filter: blur(8px);
+}
+
+.mininav {
+	display: none;
+	text-transform: capitalize;
 }
 
 .navigation {
@@ -158,7 +163,6 @@ td.button a:hover {
 }
 
 .newspaper {
-	max-height: 500px;
 	width: 33.33%;
 	float: left;
 }
@@ -176,7 +180,6 @@ img.article {
 table.adressa {
 	margin: 0px 5% 0px 5%;
 	font-size: 11px;
-	overflow-y: scroll;
 }
 
 table.adressa .headline {
@@ -189,10 +192,23 @@ table.adressa .headline {
 	float: left;
 }
 
+.divider {
+	display: none;
+}
+
 .widgets {
 	min-height: 1000px;
 	width: 33.33%;
 	float: left;
+}
+
+footer {
+	border-top: 2px solid rgb(229,229,229);
+	text-align: center;
+	float: left;
+	width: 100%;
+	padding-top: 50px;
+	height: 60px;
 }
 
 @-webkit-keyframes loading {
@@ -218,4 +234,88 @@ table.adressa .headline {
 @keyframes loading {
 	from { background-position:    0px; }
 		to { background-position: -500px; }
+}
+
+@media only screen and (max-width: 996px) {
+	header {
+		height: 125px;
+	}
+    .logo {
+    	width: 100%;
+    	background: #fff url(../img/logo.png) no-repeat center top;
+    	background-size: contain;
+    }
+    .navigation {
+		float: left;
+		width: 100%;
+		margin-top: 0px;
+	}
+	.background, .clock {
+		top: 127px;
+	}
+	.morenav {
+		right: 13%;
+		top: 120px;
+	}
+
+	.login {
+		right: 20px;
+		top: 150px;
+	}
+	.news, .widgets {
+		width: 100%;
+	}
+	.newspaper {
+		display: none;
+	}
+	.divider {
+		border-top: 2px solid rgb(229,229,229);
+		display: block;
+		float: left;
+	}
+}
+
+@media only screen and (max-width: 799px) {
+	.morenav {
+		right: 10%;
+	}
+}
+
+@media only screen and (max-width: 711px) {
+	.weather {
+		width: 200px;
+		height: 200px;
+	}
+	.weather .celsius, .weather .headline {
+		font-size: 14px;
+	}
+	.weather table {
+		padding-top: 0px;
+	}
+	.newsfeed {
+		margin-left: 20px;
+		margin-top: 70px;
+	}
+	.navigation {
+		text-indent: 0px;
+		margin-left: 5px;
+	}
+}
+
+@media only screen and (max-width: 649px) {
+	.navigation {
+		display: none;
+	}
+	.mininav {
+		display: initial;
+		width: 93%;
+		margin-left: 20px;
+	}
+}
+
+@media only screen and (max-width: 459px) {
+	.login {
+		height: 80px;
+		width: 160px;
+	}
 }

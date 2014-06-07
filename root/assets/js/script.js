@@ -15,6 +15,10 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 		updateClock();
 	}, 1);
 
+	$(".mininav").change(function() {
+		window.location.href = "./" + $(this).find(":selected").text().replace(/ /g, "");
+	});
+
 	$('.navigation a').click(function() {
 	    if($(this).attr("href") === "#logginn") {
 	    	var login_box = $('.login');
