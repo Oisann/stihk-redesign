@@ -195,7 +195,7 @@ table.adressa .headline {
 }
 
 .news {
-	min-height: 1000px;
+	min-height: 20px;
 	width: 33.33%;
 	float: left;
 }
@@ -207,6 +207,7 @@ table.adressa .headline {
 .widgets {
 	width: 33.33%;
 	float: left;
+	padding-bottom: 20px;
 }
 
 footer {
