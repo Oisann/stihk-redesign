@@ -80,13 +80,6 @@
 		width: 93%;
 		margin-left: 20px;
 	}
-	.weather {
-		-webkit-transform: scale(0.6);
-		-moz-transform: scale(0.6);
-		-ms-transform: scale(0.6);
-		-o-transform: scale(0.6);
-		transform: scale(0.6);
-	}
 }
 
 @media only screen and (max-width: 459px) {
