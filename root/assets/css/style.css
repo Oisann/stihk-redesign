@@ -42,8 +42,7 @@ header {
 
 .background {
 	position: absolute;
-	width: 100%;
-	padding-right: -10px;
+	width: 99%;
 	height: 400px; /* Size of .header, including padding */
 	top: 102px; /* Size of header */
 	background: url(../img/brygge.jpg) no-repeat top;
