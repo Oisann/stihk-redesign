@@ -15,6 +15,15 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 		updateClock();
 	}, 1);
 
+	var socket = io.connect('http://www.oisann.net:3000');
+	var usersOnline = $('.currentVisitorCount');
+
+	socket.on('online', function(data) {
+		usersOnline.each(function() {
+			$(this).text(data);
+		});
+	});
+
 	$(".mininav").change(function() {
 		window.location.href = "./" + $(this).find(":selected").text().replace(/ /g, "");
 	});
