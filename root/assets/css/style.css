@@ -307,7 +307,7 @@ footer {
 		display: none;
 	}
 	.mininav {
-		display: initial;
+		display: inline;
 		width: 93%;
 		margin-left: 20px;
 	}
