@@ -242,6 +242,7 @@ footer {
 		height: 125px;
 	}
     .logo {
+    	margin-left: 0px;
     	width: 100%;
     	background: #fff url(../img/logo.png) no-repeat center top;
     	background-size: contain;
