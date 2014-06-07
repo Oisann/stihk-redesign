@@ -40,7 +40,7 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 function addAdressaArticle(json) {
 	var adressa = $('table.adressa');
 	adressa.html(""); //clear all articles
-	for(var i=0; i<=25; i++) {
+	for(var i=0; i<=3; i++) {
 		adressa.append("<tr><td><a href=\"" + json[i].link + "\" class=\"normal\" target=\"_blank\"><img class=\"article\" src=\"" + json[i].image + "\" alt=\"" + json[i].headline + "\" /></a></td><td><h3 class=\"headline\"><a href=\"" + json[i].link + "\" class=\"normal\" target=\"_blank\">" + json[i].headline + "</a></h3>" + json[i].lead + "</td></tr>");
 	}
 }
