@@ -331,6 +331,12 @@ footer {
 		text-indent: 0px;
 		margin-left: 5px;
 	}
+	.notification,  .notification a{
+		height: 0px;
+		width: 0px;
+		color: transparent;
+		background-color: transparent; 
+	}
 }
 
 @media only screen and (max-width: 649px) {
