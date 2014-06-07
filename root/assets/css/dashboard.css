@@ -1,0 +1,70 @@
+.dashboard footer {
+	position: fixed;
+	bottom: 0px;
+}
+
+.dashboardmenu {
+	position: absolute;
+	float: left;
+	height: 80%;
+	width: 250px;
+	background-color: rgb(249,249,249);
+	border-right: 2px solid rgb(229,229,229);
+}
+
+.dashboardmenu .menu {
+	margin-top: -2px;
+}
+
+.dashboardmenu .menu td {
+	width: 250px;
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-left: -4px;
+	font-weight: bold;
+	background-color: rgba(200, 200, 200, 0.1);
+	border-bottom: 1px solid rgb(229,229,229);
+}
+
+.dashboardmenu .menu td a {
+	color: #000;
+	text-decoration: none;
+}
+
+.dashboardmenu .menu td:hover {
+	background-color: rgba(200, 200, 200, 0.3);
+	cursor: pointer;
+}
+
+.dashboardmenu .menu td.selected {
+	background-color: rgba(200, 200, 200, 0.3);
+}
+
+.dashboardwindow {
+	width: 100%;
+	height: 80%;
+	position: absolute;
+	float: left;
+	margin-left: 252px;
+	padding: 5px;
+}
+
+@media only screen and (max-width: 564px) {
+	.navigation {
+		position: absolute;
+	}
+
+	.logo {
+		display: none;
+	}
+
+	.dashboardmenu, .dashboardmenu .menu td {
+		width: 150px;
+	}
+
+	.dashboardwindow {
+		margin-left: 152px;
+	}
+}
