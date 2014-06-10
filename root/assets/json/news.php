@@ -14,7 +14,7 @@
 
 	$articles = array();
 	while ($row = mysql_fetch_array($mysql_query)) {
-		$articles[intval($row['nyhet_id'])] = array('date' => $row['nyhet_dato'], 'type' => intval($row['nyhet_type']), 'headline' => htmlentities($row['nyhet_overskrift']), 'text' => htmlentities($row['nyhet_tekst']), 'image' => htmlentities($row['nyhet_bilde']), 'hidden' => 0);
+		$articles[$row['nyhet_id']] = array('date' => $row['nyhet_dato'], 'type' => intval($row['nyhet_type']), 'headline' => htmlentities($row['nyhet_overskrift']), 'text' => htmlentities(utf8_encode($row['nyhet_tekst'])), 'image' => htmlentities($row['nyhet_bilde']), 'hidden' => 0);
 	}
 	mysql_close($mysql_connection);
 	echo html_entity_decode(json_encode($articles));
