@@ -194,10 +194,22 @@ table.adressa .headline {
 	margin: 0px;
 }
 
+table.stihknews {
+	margin: 0px 20px 0px 16px;
+	font-size: 11px;
+}
+
+table.stihknews .headline {
+	margin: 0px;
+}
+
 .news {
-	min-height: 20px;
 	width: 33.33%;
 	float: left;
+}
+
+.news h1.center {
+	min-height: 63px;
 }
 
 .divider {
@@ -208,6 +220,8 @@ table.adressa .headline {
 	width: 33.33%;
 	float: left;
 	padding-bottom: 20px;
+	padding-left: 20px;
+	margin-right: -20px;
 }
 
 footer {
