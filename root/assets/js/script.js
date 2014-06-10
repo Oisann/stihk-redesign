@@ -147,7 +147,7 @@ function updateClock() {
 function updateStihk() {
 	$.ajax({
 		type: "GET",
-		url: './assets/json/news.json',
+		url: 'http://stihk.no/demo/assets/json/news.json',
 		dataType: "json",
 		success: addStihkArticle
 	});
