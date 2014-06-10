@@ -13,6 +13,7 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	updateClock();
 	updateWeather();
 	updateAdressa();
+	updateStihk();
 	setInterval(function() {
 		updateWeather();
 	}, 12 * 60000); //update every hour
@@ -124,6 +125,16 @@ function addAdressaArticle(json) {
 	}
 }
 
+function addStihkArticle(json) {
+	var stihk = $('table.stihknews');
+	stihk.html("");
+	var max = 15;
+	for(var i=0; i<max; i++) {
+		if(i == 0) addNewsfeedItem(json[i].headline, json[i].text, '#');
+		stihk.append("<tr><td><a href=\"#\" class=\"normal\" target=\"_blank\"><img class=\"article\" src=\"" + json[i].image + "\" alt=\"" + json[i].headline + "\" /></a></td><td><h3 class=\"headline\"><a href=\"#\" class=\"normal\" target=\"_blank\">" + json[i].headline + "</a></h3>" + json[i].text + "</td></tr>");
+	}
+}
+
 function updateClock() {
 	d = new Date();
 	datetext = d.toTimeString();
@@ -131,6 +142,15 @@ function updateClock() {
 	clock = $('.clock');
 	if(clock.text() !== datetext)
 		clock.text(datetext);
+}
+
+function updateStihk() {
+	$.ajax({
+		type: "GET",
+		url: './assets/json/news.json',
+		dataType: "json",
+		success: addStihkArticle
+	});
 }
 
 function updateAdressa() {
