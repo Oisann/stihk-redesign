@@ -2,4 +2,6 @@ RewriteEngine On
 RewriteRule ^([a-zA-Z0-9]+)$ index.php?page=$1
 RewriteRule ^([a-zA-Z0-9]+)/$ index.php?page=$1
 
-RewriteRule assets/json/^([a-zA-Z0-9]+)$.json ./assets/json/$1.php
+<Files ./assets/json/*.json>
+	RewriteRule ^([a-zA-Z0-9]+).json$ $1.php
+</Files>
