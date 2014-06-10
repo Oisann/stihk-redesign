@@ -1,7 +1,5 @@
 RewriteEngine On
 RewriteRule ^([a-zA-Z0-9]+)$ index.php?page=$1
 RewriteRule ^([a-zA-Z0-9]+)/$ index.php?page=$1
-<Files ./assets/json/*.json>
-	AddType application/x-httpd-php .json
-	AddHandler application/x-httpd-php .json
-</Files>
+
+RewriteRule ./assets/json/^([a-zA-Z0-9]+)$.json ./assets/json/$1.php
