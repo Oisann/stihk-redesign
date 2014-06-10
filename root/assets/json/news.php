@@ -16,6 +16,6 @@
 	while ($row = mysql_fetch_array($mysql_query)) {
 		$articles[$row['nyhet_id']] = array('date' => $row['nyhet_dato'], 'type' => $row['nyhet_type'], 'headline' => $row['nyhet_overskrift'], 'text' => $row['nyhet_tekst'], 'image' => $row['nyhet_bilde'], 'hidden' => 0);
 	}
-
+	mysql_close($mysql_connection);
 	echo json_encode($articles);
 ?>
