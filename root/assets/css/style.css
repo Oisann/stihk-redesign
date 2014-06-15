@@ -219,11 +219,21 @@ table.stihknews .headline {
 .widgets {
 	width: 33.33%;
 	float: left;
-	padding-bottom: 20px;
+	padding: 0px 20px 20px 0px;
+	margin-right: -40px;
 }
 
 .stats {
 	padding-left: 20px;
+}
+
+.facebook {
+	border: none;
+	overflow: hidden;
+	width: 95%;
+	height: 427px;
+	padding-left: 20px;
+	padding-top: 20px;
 }
 
 footer {
