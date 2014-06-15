@@ -134,6 +134,7 @@ function updateClock() {
 }
 
 function updateAdressa() {
+	if($('html').hasClass('news')) return; //Save oisann.net for unnecessary traffic and load
 	$.ajax({
 		type: "GET",
 		url: adressa_hockey,

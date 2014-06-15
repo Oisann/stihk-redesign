@@ -195,7 +195,7 @@ table.adressa .headline {
 }
 
 table.stihknews {
-	margin: 0px 20px 0px 16px;
+	margin: 0px 20px 20px 16px;
 	font-size: 11px;
 }
 
@@ -203,12 +203,18 @@ table.stihknews .headline {
 	margin: 0px;
 }
 
-.news {
+div.news {
 	width: 33.33%;
 	float: left;
 }
 
-.news h1.center {
+html.news div.news {
+	min-height: 10px;
+	width: 66.66%;
+	float: left;
+}
+
+div.news h1.center {
 	min-height: 63px;
 }
 
