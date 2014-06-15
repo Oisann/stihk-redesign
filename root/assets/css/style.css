@@ -219,8 +219,7 @@ table.stihknews .headline {
 .widgets {
 	width: 33.33%;
 	float: left;
-	padding: 0px 20px 20px 0px;
-	margin-right: -40px;
+	padding: 0px 0px 20px 0px;
 }
 
 .stats {
@@ -230,7 +229,7 @@ table.stihknews .headline {
 .facebook {
 	border: none;
 	overflow: hidden;
-	width: 95%;
+	width: 300px;
 	height: 427px;
 	padding-left: 20px;
 	padding-top: 20px;
