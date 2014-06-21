@@ -251,6 +251,10 @@ footer {
 	height: 60px;
 }
 
+span.small {
+	font-size: 10px;
+}
+
 .notification {
 	float: left;
 	position: fixed;
