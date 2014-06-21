@@ -46,6 +46,7 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 
 	$('.notification a').click(function() {
 		if($(this).attr("href") === "#close") {
+			console.log($(this).parent().attr("id"));
 			closeNotification($(this).parent());
 		}
 	});
