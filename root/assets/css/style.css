@@ -271,13 +271,12 @@ span.small {
 
 .notification a {
 	color: #fff;
-	text-decoration: underline;
+	text-decoration: none;
 	font-weight: bold;
 }
 
 .notification a.close {
 	position: absolute;
-	text-decoration: none;
 	right: 10px;
 }
 
