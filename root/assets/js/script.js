@@ -75,10 +75,17 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 });
 
 function closeNotification(element) {
-	element.fadeOut(function() {
-		onCloseNotification(element);
-		element.remove();
-	});
+	if($(window).width() <= 711) {
+		element.animate({"margin-top": "-100px"}, 500);
+		setTimeout(function() {
+			element.remove();
+		}, 500);
+	} else {
+		element.fadeOut(function() {
+			onCloseNotification(element);
+			element.remove();
+		});
+	}
 }
 
 function onCloseNotification(element) {
@@ -92,14 +99,28 @@ function onCloseNotification(element) {
 	});
 }
 
+function push(title, line1, line2, passcode) {
+	var data = {
+	    title:title,
+	    line1:line1,
+	    line2:line2,
+	    passcode:passcode
+	};
+	socket.emit('notification', data);
+}
+
 function notification(title, line1, line2) {
 	var count = $('.notification').length,
 		id = +new Date + parseInt(Math.random() * 1000);
 	$('body').append('<div id="' + id + '" class="notification" style="bottom: ' + (count * 120 + 20) + 'px; display: none;"><a href="#close" onclick="closeNotification($(this).parent())">x</a><h3>' + title + '</h3>' + line1 + '<br />' + line2 + '</div>');
 	$('#' + id).fadeIn();
+	if($(window).width() <= 711) {
+		$('#' + id).css("margin-top", "-100px");
+		$('#' + id).animate({"margin-top": "0px"}, 500);
+	}
 	setTimeout(function() {
 		closeNotification($('#' + id));
-	}, 15000);
+	}, 3000);
 }
 
 function addNewsfeedItem(title, text, link) {

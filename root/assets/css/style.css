@@ -375,11 +375,25 @@ span.small {
 		text-indent: 0px;
 		margin-left: 5px;
 	}
-	html.media .notification,  .notification a{
-		height: 0px;
-		width: 0px;
-		color: transparent;
-		background-color: transparent; 
+	html.media .notification a {
+		display: none;
+	}
+	html.media .notification h3 {
+		margin: 0;
+		margin-bottom: 10px;
+	}
+	html.media .notification {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 70px;
+		z-index: 100;
+		background: rgba(0, 0, 0, 0.6);
+		text-align: center;
+		color: #fff;
+		bottom: 0px;
+		right: 0px;
+		border-radius: 0px;
 	}
 }
 
