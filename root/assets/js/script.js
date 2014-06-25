@@ -1,7 +1,8 @@
 var trondheim_url = "https://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondheim/Trondheim", //Yr.no mirrors > Allowing cross domain
 	korsvegen_url = "https://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Melhus/Korsvegen",
 	adressa_hockey = "https://oisann.net/adressa/ishockey/",
-	symbol_url_start = "http://symbol.yr.no/grafikk/sym/b38/"; //Start of weathersymbol. Ends with .png
+	symbol_url_start = "http://symbol.yr.no/grafikk/sym/b38/", //Start of weathersymbol. Ends with .png
+	socket = io.connect('http://www.oisann.net:3000');
 $(document).ready(function() { //no need for this, since i load it at the bottom of the page. EH
 	var path = window.location.pathname;
 	try {
@@ -21,7 +22,6 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 		updateClock();
 	}, 1);
 
-	var socket = io.connect('http://www.oisann.net:3000');
 	var usersOnline = $('.currentVisitorCount');
 
 	socket.on('online', function(data) {
@@ -120,7 +120,7 @@ function notification(title, line1, line2) {
 	}
 	setTimeout(function() {
 		closeNotification($('#' + id));
-	}, 3000);
+	}, 15000);
 }
 
 function addNewsfeedItem(title, text, link) {
