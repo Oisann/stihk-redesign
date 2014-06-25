@@ -44,13 +44,13 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 		window.location.href = link;
 	});
 
-	$('.notification a').click(function() {
+	/*$('.notification a').click(function() {
 		console.log($(this).parent().attr("id"));
 		if($(this).attr("href") === "#close") {
 			console.log($(this).parent().attr("id"));
 			closeNotification($(this).parent());
 		}
-	});
+	});*/
 
 	$('.navigation a').click(function() {
 	    if($(this).attr("href") === "#logginn") {
@@ -95,7 +95,7 @@ function onCloseNotification(element) {
 function notification(title, line1, line2) {
 	var count = $('.notification').length,
 		id = +new Date + parseInt(Math.random() * 1000);
-	$('body').append('<div id="' + id + '" class="notification" style="bottom: ' + (count * 120 + 20) + 'px; display: none;"><a href="#close">x</a><h3>' + title + '</h3>' + line1 + '<br />' + line2 + '</div>');
+	$('body').append('<div id="' + id + '" class="notification" style="bottom: ' + (count * 120 + 20) + 'px; display: none;"><a href="#close" onclick="closeNotification($(this).parent())">x</a><h3>' + title + '</h3>' + line1 + '<br />' + line2 + '</div>');
 	$('#' + id).fadeIn();
 	setTimeout(function() {
 		closeNotification($('#' + id));
