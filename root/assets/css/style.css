@@ -270,10 +270,14 @@ span.small {
 }
 
 .notification a {
-	position: absolute;
 	color: #fff;
-	text-decoration: none;
+	text-decoration: underline;
 	font-weight: bold;
+}
+
+.notification a.close {
+	position: absolute;
+	text-decoration: none;
 	right: 10px;
 }
 
@@ -375,7 +379,7 @@ span.small {
 		text-indent: 0px;
 		margin-left: 5px;
 	}
-	html.media .notification a {
+	html.media .notification a.close {
 		display: none;
 	}
 	html.media .notification h3 {

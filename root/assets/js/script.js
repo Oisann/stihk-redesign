@@ -112,7 +112,7 @@ function push(title, line1, line2, passcode) {
 function notification(title, line1, line2) {
 	var count = $('.notification').length,
 		id = +new Date + parseInt(Math.random() * 1000);
-	$('body').append('<div id="' + id + '" class="notification" style="bottom: ' + (count * 120 + 20) + 'px; display: none;"><a href="#close" onclick="closeNotification($(this).parent())">x</a><h3>' + title + '</h3>' + line1 + '<br />' + line2 + '</div>');
+	$('body').append('<div id="' + id + '" class="notification" style="bottom: ' + (count * 120 + 20) + 'px; display: none;"><a class="close" href="#close" onclick="closeNotification($(this).parent())">x</a><h3>' + title + '</h3>' + line1 + '<br />' + line2 + '</div>');
 	$('#' + id).fadeIn();
 	if($(window).width() <= 711) {
 		$('#' + id).css("margin-top", "-100px");
