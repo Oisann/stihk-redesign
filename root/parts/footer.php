@@ -49,11 +49,11 @@
 			</table>
 			<iframe class="facebook" src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.stihk.no&amp;width=300&amp;height=427&amp;colorscheme=light&amp;show_faces=false&amp;header=true&amp;stream=true&amp;show_border=true&amp;appId=172164879660704" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 		</div>
-		<footer>Copyright Sør-Trøndelag Ishockeykrets &copy; <?php echo date("Y"); ?><br><span class="small">Laget av <a class="normal" target="_blank" href="https://www.oisann.net/">Jonas Refseth</a></span>
+		<footer>Copyright Sør-Trøndelag Ishockeykrets &copy; <?php echo date("Y"); ?><br><span class="small">Laget av <a class="normal" target="_blank" href="https://www.oisann.net/">Jonas Refseth</a></span><?php echo $funksjoner->url_folder_depth; ?>
 		</footer>
 	</body>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
-	<script src="./assets/js/jquery.marquee.min.js"></script>
-	<script src="./assets/js/script.js"></script>
+	<script src="<?php echo $funksjoner->fix_linking; ?>assets/js/jquery.marquee.min.js"></script>
+	<script src="<?php echo $funksjoner->fix_linking; ?>assets/js/script.js"></script>
 </html>
