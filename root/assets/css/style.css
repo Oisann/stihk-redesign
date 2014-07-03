@@ -204,6 +204,11 @@ table.stihknews .headline {
 }
 
 div.news {
+	width: 66.66%;
+	float: left;
+}
+
+.hjem div.news {
 	width: 33.33%;
 	float: left;
 }
