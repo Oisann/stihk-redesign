@@ -13,6 +13,7 @@
 
 	if($page == "404") $title = "Siden kan ikke vises - Error 404";
 	
+	include('./config.php');
 	include('./parts/header.php');
 	include($page_include);
 	include('./parts/footer.php');
