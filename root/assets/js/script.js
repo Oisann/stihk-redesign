@@ -7,6 +7,7 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	var path = $(location).attr('href');
 	try {
 		var filename = path.split('/')[4];
+		if(filename == "") filename = "hjem";
 	} catch(err) {
 		var filename = 'hjem';
 	}
