@@ -1,4 +1,6 @@
 RewriteEngine On
 RewriteRule ^([a-zA-Z0-9]+)$ index.php?page=$1
 RewriteRule ^([a-zA-Z0-9]+)/$ index.php?page=$1
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)$ index.php?page=$1&id=$2
+RewriteRule ^([a-zA-Z0-9]+)/([a-zA-Z0-9]+)/$ index.php?page=$1&id=$2
 RewriteRule assets/json/([a-zA-Z0-9]+).json assets/json/$1.php
