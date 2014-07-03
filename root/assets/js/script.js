@@ -4,11 +4,11 @@ var trondheim_url = "https://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondhe
 	symbol_url_start = "http://symbol.yr.no/grafikk/sym/b38/", //Start of weathersymbol. Ends with .png
 	socket = io.connect('http://www.oisann.net:3000');
 $(document).ready(function() { //no need for this, since i load it at the bottom of the page. EH
-	var path = window.location.pathname;
+	var path = $(location).attr('href');
 	try {
-		var filename = path.match(/.*\/([^/]+)\.([^?]+)/i)[1];
+		var filename = path.split('/')[4];
 	} catch(err) {
-		var filename = 'index';
+		var filename = 'hjem';
 	}
 	$('html').addClass(filename);
 	updateClock();
