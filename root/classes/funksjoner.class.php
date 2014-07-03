@@ -25,7 +25,7 @@
         
         public function fix_linking() {
             $depth = $this->url_folder_depth();
-            if($depth == 2) return ""; // ******************************** REVERT 'LINK-FIX UNDER DEV'
+            if($depth == 1) return "";
             $prefix = "../";
             $result = "";
             for ($i = 0; $i < $depth - 1; $i++) {
