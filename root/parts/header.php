@@ -1,14 +1,18 @@
-<!doctype html>
+<?php
+	$title = empty($title) ? "STIHK" : $title;
+	$description = empty($description) ? "Oversikt over sesongens kamper, hallfordelinger, dommere, generelle nyheter og alt annet som STIHK gjør." : $description;
+	$keywords = empty($keywords) ? "ishockey, trondheim, sør-trøndelag, leangen, dalgård, ishall" : $keywords;
+?><!doctype html>
 <html class="media">
 	<head>
 		<meta charset="utf-8">
-		<title>STIHK - Sør-Trøndelag Ishockeykrets</title>
-		<meta name="description" content="Oversikt over sesongens kamper, hallfordelinger, dommere, generelle nyheter og alt annet som STIHK gjør.">
-		<meta name="keywords" content="ishockey, trondheim, sør-trøndelag, leangen, dalgård, ishall">
+		<title><?php echo $title; ?> - Sør-Trøndelag Ishockeykrets</title>
+		<meta name="description" content="<?php echo $description; ?>">
+		<meta name="keywords" content="<?php echo $keywords; ?>">
 		<meta name="author" content="Jonas Refseth">
 		<meta name="viewport" content="width=device-width">
 		<meta property="og:image" content="http://www.stihk.no/demo/assets/img/logo.png" />
-		<meta property="og:updated_time" content="1402139817" />
+		<meta property="og:updated_time" content="<?php echo time(); ?>" />
 		<link rel="icon" href="./assets/img/favicon.png">
 		<link rel="stylesheet" href="./assets/css/style.css">
 	</head>
@@ -120,70 +124,3 @@
 			<div class="newsfeed"><strong>OBS!:</strong> Denne siden er under utvikling...</div>
 		</div>
 		<div class="shadow"></div>
-		<div class="newspaper">
-			<h1 class="center"><a href="http://www.adressa.no/100Sport/ishockey/" class="normal" target="_blank"><img src="./assets/img/adressa.png" alt="Adressa.no" /></a></h1>
-			<table class="adressa">
-				<tr><td><span class="loading" title="Loading..."></span></td></tr>
-			</table>
-		</div>
-		<div class="news">
-			<h1 class="center">Nyheter</h1>
-			<table class="stihknews">
-				<tr><td>2014-06-10</td><td><h3 class="headline"><a href="#" class="normal" target="_blank">Rosenborg Elite Skill Camp 11-15.August</a></h3>3grupper-basert på alder og nivå.<br>Godt forhold mellom antall trenere og deltagere.</td></tr>
-			</table>
-		</div>
-		<div class="shadow divider"></div>
-		<div class="widgets">
-			<table class="stats">
-				<tr>
-					<td><h3>Statistikk</h3></td>
-				</tr>
-				<tr>
-					<td><strong>Besøkende for øyeblikket:</strong></td>
-					<td><span class="currentVisitorCount">0</span></td>
-				</tr>
-				<tr>
-					<td><strong>Kamper i dag:</strong></td>
-					<td>0</td>
-				</tr>
-				<tr>
-					<td><strong>Lisensierte spillere:</strong></td>
-					<td>1337</td>
-				</tr>
-				<tr>
-					<td><strong>Dommere:</strong></td>
-					<td>16</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-				</tr>
-				<tr>
-					<td><h3>Hva skjer nå?</h3></td>
-				</tr>
-				<tr>
-					<td><strong>Leangen Arena:</strong></td>
-					<td class="arena">N/A</td>
-				</tr>
-				<tr>
-					<td><strong>Leangen Ungdomshall:</strong></td>
-					<td class="ungdomshall">N/A</td>
-				</tr>
-				<tr>
-					<td><strong>Dalgård:</strong></td>
-					<td class="dalgard">N/A</td>
-				</tr>
-				<tr>
-					<td><strong>Hølonda Utebane:</strong></td>
-					<td class="holonda">N/A</td>
-				</tr>
-			</table>
-			<iframe class="facebook" src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.stihk.no&amp;width=300&amp;height=427&amp;colorscheme=light&amp;show_faces=false&amp;header=true&amp;stream=true&amp;show_border=true&amp;appId=172164879660704" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-		</div>
-		<footer>Copyright Sør-Trøndelag Ishockeykrets &copy; 2014<br><span class="small">Laget av <a class="normal" target="_blank" href="https://www.oisann.net/">Jonas Refseth</a></span>
-		</footer>
-	</body>
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
-	<script src="./assets/js/jquery.marquee.min.js"></script>
-	<script src="./assets/js/script.js"></script>
-</html>
