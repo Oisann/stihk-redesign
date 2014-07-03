@@ -11,14 +11,14 @@
 		<meta name="keywords" content="<?php echo $keywords; ?>">
 		<meta name="author" content="Jonas Refseth">
 		<meta name="viewport" content="width=device-width">
-		<meta property="og:image" content="http://www.stihk.no/demo/assets/img/logo.png" />
+		<meta property="og:image" content="<?php echo $funksjoner->fix_linking; ?>assets/img/logo.png" />
 		<meta property="og:updated_time" content="<?php echo time(); ?>" />
-		<link rel="icon" href="./assets/img/favicon.png">
-		<link rel="stylesheet" href="./assets/css/style.css">
+		<link rel="icon" href="<?php echo $funksjoner->fix_linking; ?>assets/img/favicon.png">
+		<link rel="stylesheet" href="<?php echo $funksjoner->fix_linking; ?>assets/css/style.css">
 	</head>
 	<body>
 		<header>
-			<a href="./hjem" alt="STIHK - Sør-Trøndelag Ishockeykrets"><div class="logo"></div></a>
+			<a href="<?php echo $funksjoner->fix_linking; ?>hjem" alt="STIHK - Sør-Trøndelag Ishockeykrets"><div class="logo"></div></a>
 			<select class="mininav">
 				<option selected disabled>-- Meny --</option>
 				<option>istider</option>
@@ -37,19 +37,19 @@
 			<table class="navigation">
 				<tr>
 					<td>
-						<a href="./istider" alt="Istider">istider</a>
+						<a href="<?php echo $funksjoner->fix_linking; ?>istider" alt="Istider">istider</a>
 					</td>
 					<td>
-						<a href="./serier" alt="Serier">serier</a>
+						<a href="<?php echo $funksjoner->fix_linking; ?>serier" alt="Serier">serier</a>
 					</td>
 					<td>
-						<a href="./arrangement" alt="Arrangement">arrangement</a>
+						<a href="<?php echo $funksjoner->fix_linking; ?>arrangement" alt="Arrangement">arrangement</a>
 					</td>
 					<td>
-						<a href="./dommere" alt="Dommere">dommere</a>
+						<a href="<?php echo $funksjoner->fix_linking; ?>dommere" alt="Dommere">dommere</a>
 					</td>
 					<td>
-						<a href="./kontakter" alt="Kontakter">kontakter</a>
+						<a href="<?php echo $funksjoner->fix_linking; ?>kontakter" alt="Kontakter">kontakter</a>
 					</td>
 					<td>
 						<a href="#annet" alt="Annet">annet</a>
@@ -70,27 +70,27 @@
 				<table>
 					<tr>
 						<td>
-							<a href="./omoss" alt="Om oss">om oss</a>
+							<a href="<?php echo $funksjoner->fix_linking; ?>omoss" alt="Om oss">om oss</a>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="./bestemmelser" alt="Bestemmelser">bestemmelser</a>
+							<a href="<?php echo $funksjoner->fix_linking; ?>bestemmelser" alt="Bestemmelser">bestemmelser</a>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="./dokumenter" alt="Dokumenter">dokumenter</a>
+							<a href="<?php echo $funksjoner->fix_linking; ?>dokumenter" alt="Dokumenter">dokumenter</a>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="./rom" alt="rom">rom</a>
+							<a href="<?php echo $funksjoner->fix_linking; ?>rom" alt="rom">rom</a>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="./lenker" alt="Lenker">lenker</a>
+							<a href="<?php echo $funksjoner->fix_linking; ?>lenker" alt="Lenker">lenker</a>
 						</td>
 					</tr>
 				</table>
