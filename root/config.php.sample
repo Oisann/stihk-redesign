@@ -15,18 +15,3 @@
 	 *
 	 */
 	date_default_timezone_set("Europe/Oslo");
-
-	/*
-	 *
-	 *	FUNCTIONS
-	 *
-	 */
-	function getCurrentSeason() {
-		if(date("n") < 6) return (date("Y") - 1) . "/" . date("Y");
-		return date("Y") . "/" . (date("Y") + 1);
-	}
-
-	function getNextSeason() {
-		if(date("n") < 6) return date("Y") . "/" . (date("Y") + 1);
-		return date("Y") . "/" . (date("Y") + 2);
-	}
