@@ -9,4 +9,5 @@
 			<table class="stihknews">
 				<tr><td><h3>Siden du leter etter, finnes ikke!</h3></td></tr>
 			</table>
+			<?php phpinfo(); ?>
 		</div>
