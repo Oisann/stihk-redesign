@@ -18,5 +18,5 @@
 	include('./parts/header.php');
 	include($page_include);
 	include('./parts/footer.php');
-	<?php $mysql->closeConnection(); ?>
+	$mysql->closeConnection();
 ?>
