@@ -5,6 +5,8 @@
 		include($class);
 	}
 	$funksjoner = new funksjoner();
+	include('./config.php');
+	$mysql = new MySQL($mysql_database, $mysql_user, $mysql_password, $mysql_host);
 	$page = $_GET['page'];
 	if(empty($page)) $page = "hjem";
 
@@ -13,8 +15,8 @@
 
 	if($page == "404") $title = "Siden kan ikke vises - Error 404";
 	
-	include('./config.php');
 	include('./parts/header.php');
 	include($page_include);
 	include('./parts/footer.php');
+	<?php $mysql->closeConnection(); ?>
 ?>
