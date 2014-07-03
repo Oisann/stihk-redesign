@@ -3,8 +3,8 @@
 	class funksjoner {
 
 		public function sesong() {
-			if(date("n") <= 5) return "SESONG" . date("Y") - 1 . "/" . date("Y");
-			return "SESONG" . date("Y") . "/" . date("Y") + 1;
+			if(date("n") <= 5) return "FØR JUNI"; //date("Y") - 1 . "/" . date("Y");
+			return "ETTTER JUNI"; //date("Y") . "/" . date("Y") + 1;
 		}
 
 		public function neste_sesong() {
