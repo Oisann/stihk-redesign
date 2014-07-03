@@ -4,6 +4,7 @@
 	foreach($classes as $class) {
 		include($class);
 	}
+	$funksjoner = new funksjoner();
 	$page = $_GET['page'];
 	if(empty($page)) $page = "hjem";
 

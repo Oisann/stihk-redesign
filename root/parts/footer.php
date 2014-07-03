@@ -21,6 +21,10 @@
 					<td>16</td>
 				</tr>
 				<tr>
+					<td><strong>Sesong:</strong></td>
+					<td><?php echo $funksjoner->sesong(); ?></td>
+				</tr>
+				<tr>
 					<td>&nbsp;</td>
 				</tr>
 				<tr>
