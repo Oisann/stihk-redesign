@@ -10,7 +10,7 @@
 	if(!$mysql_query) die('{ "error":"' . mysql_error() . '" }');
 
 	while ($row = mysql_fetch_array($mysql_query)) {
-		if($row['overskrift'] == null) {
+		if(empty($row['overskrift'])) {
 			echo "Fant ingen nyhet med id: " . $id;
 			return;
 		}
