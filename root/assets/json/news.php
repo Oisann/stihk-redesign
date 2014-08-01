@@ -19,5 +19,5 @@
 		$counter++;
 	}
 	mysql_close($mysql_connection);
-	echo html_entity_decode(json_encode($articles));
+	echo utf8_encode(html_entity_decode(json_encode($articles)));
 ?>
