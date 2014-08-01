@@ -15,3 +15,6 @@
 	 *
 	 */
 	date_default_timezone_set("Europe/Oslo");
+
+	$data_lisensierte_spillere = 1685;
+	$data_dommere = 16;

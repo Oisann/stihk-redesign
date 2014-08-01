@@ -56,7 +56,7 @@
 					<td>
 						<a href="#annet" alt="Annet">annet</a>
 					</td>
-					<td class="button hidden">
+					<td class="button">
 						<a href="#logginn" alt="Logg inn">logg inn</a>
 					</td>
 				</tr>
