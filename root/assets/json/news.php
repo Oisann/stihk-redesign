@@ -7,7 +7,7 @@
 	$mysql_connection = mysql_connect($mysql_host,$mysql_user,$mysql_password);
 	if (!$mysql_connection) die('{ "error":"mysql connection failed" }');
 	if (!mysql_select_db($mysql_database, $mysql_connection)) die('{ "error":"mysql database not found" }');
-	$mysql_selector = "SELECT * FROM stihk_nyheter WHERE (skjul = 0) ORDER BY id DESC LIMIT 0, 15;";
+	$mysql_selector = "SELECT * FROM stihk_nyheter WHERE (skjul = 0) ORDER BY endret DESC LIMIT 0, 15;";
 	
 	$mysql_query = mysql_query($mysql_selector, $mysql_connection);
 	if(!$mysql_query) die('{ "error":"' . mysql_error() . '" }');
