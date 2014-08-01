@@ -6,7 +6,6 @@
 	}
 	$funksjoner = new funksjoner();
 	include('./config.php');
-	$mysql = new MySQL($mysql_database, $mysql_user, $mysql_password, $mysql_host);
 	$page = $_GET['page'];
 	$id = $_GET['id'];
 	if(empty($page)) $page = "hjem";
@@ -20,5 +19,4 @@
 	include('./parts/header.php');
 	include($page_include);
 	include('./parts/footer.php');
-	$mysql->closeConnection();
 ?>
