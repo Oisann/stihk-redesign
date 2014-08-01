@@ -3,7 +3,7 @@
 			<div class="settings">
 				<select id="ishall">
 					<option selected>Leangen Arena</option>
-					<option>Leangen Ungdomshall</option>
+					<option disabled>Leangen Ungdomshall</option>
 					<option>Dalgård</option>
 				</select>
 				<select id="uke">
