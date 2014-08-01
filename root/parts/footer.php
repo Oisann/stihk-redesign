@@ -14,11 +14,11 @@
 				</tr>
 				<tr>
 					<td><strong>Lisensierte spillere:</strong></td>
-					<td><?php echo $data_lisensierte_spillere; ?></td>
+					<td>1685</td>
 				</tr>
 				<tr>
 					<td><strong>Dommere:</strong></td>
-					<td><?php echo $data_dommere; ?></td>
+					<td>16</td>
 				</tr>
 				<tr>
 					<td><strong>Sesong:</strong></td>
