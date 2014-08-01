@@ -174,7 +174,11 @@ function updateClock() {
 	datetext = d.toTimeString();
 	datetext = datetext.split(' ')[0];
 	clock = $('.clock');
-	if(adressa_ready && stihknews_ready) startNewsfeed();
+	if(adressa_ready && stihknews_ready) {
+		adressa_ready = false;
+		stihknews_ready = false;
+		startNewsfeed();
+	}
 	if(clock.text() !== datetext)
 		clock.text(datetext);
 }
