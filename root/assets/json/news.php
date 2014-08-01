@@ -13,8 +13,10 @@
 	if(!$mysql_query) die('{ "error":"' . mysql_error() . '" }');
 
 	$articles = array();
+	$counter = 0;
 	while ($row = mysql_fetch_array($mysql_query)) {
-		$articles[intval($row['id'])] = array('date' => intval($row['laget']), 'changed' => intval($row['endret']), 'type' => intval($row['type']), 'headline' => htmlentities($row['overskrift']), 'text' => htmlentities($row['tekst']), 'link' => "http://stihk.no/nyheter/" . intval($row['id']));
+		$articles[$counter] = array('id' => intval($row['id']), 'date' => intval($row['laget']), 'changed' => intval($row['endret']), 'type' => intval($row['type']), 'headline' => htmlentities($row['overskrift']), 'text' => htmlentities($row['tekst']));
+		$counter++;
 	}
 	mysql_close($mysql_connection);
 	echo html_entity_decode(json_encode($articles));
