@@ -16,6 +16,7 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	updateClock();
 	updateWeather();
 	updateAdressa();
+	updateNews();
 	setInterval(function() {
 		updateWeather();
 	}, 12 * 60000); //update every hour
