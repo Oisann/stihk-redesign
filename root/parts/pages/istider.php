@@ -7,9 +7,9 @@
 					<option>Dalgård</option>
 				</select>
 				<select id="uke">
-					<option selected>Uke 1 - 01.01.14 - 07.01.14</option>
-					<option>Uke 2 - 08.01.14 - 14.01.14<</option>
-					<option>Uke 3 - 15.01.14 - 22.01.14<</option>
+					<option>Uke 1 - 01.01.14 - 07.01.14</option>
+					<option selected>Uke 2* - 08.01.14 - 14.01.14</option>
+					<option>Uke 3 - 15.01.14 - 22.01.14</option>
 				</select>
 				<input type="button" id="oppdater" value="Oppdater" />
 			</div>
