@@ -27,27 +27,25 @@
 				<tr>
 					<td>&nbsp;</td>
 				</tr>
-				<span class="hidden">
-					<tr>
-						<td><h3>Hva skjer nå?</h3></td>
-					</tr>
-					<tr>
-						<td><strong>Leangen Arena:</strong></td>
-						<td class="arena">N/A</td>
-					</tr>
-					<tr>
-						<td><strong>Leangen Ungdomshall:</strong></td>
-						<td class="ungdomshall">N/A</td>
-					</tr>
-					<tr>
-						<td><strong>Dalgård:</strong></td>
-						<td class="dalgard">N/A</td>
-					</tr>
-					<tr>
-						<td><strong>Hølonda Utebane:</strong></td>
-						<td class="holonda">N/A</td>
-					</tr>
-				</span>
+				<tr>
+					<td><h3>Hva skjer nå?</h3></td>
+				</tr>
+				<tr>
+					<td><strong>Leangen Arena:</strong></td>
+					<td class="arena">N/A</td>
+				</tr>
+				<tr>
+					<td><strong>Leangen Ungdomshall:</strong></td>
+					<td class="ungdomshall">N/A</td>
+				</tr>
+				<tr>
+					<td><strong>Dalgård:</strong></td>
+					<td class="dalgard">N/A</td>
+				</tr>
+				<tr>
+					<td><strong>Hølonda Utebane:</strong></td>
+					<td class="holonda">N/A</td>
+				</tr>
 			</table>
 			<iframe class="facebook" src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.stihk.no&amp;width=300&amp;height=427&amp;colorscheme=light&amp;show_faces=false&amp;header=true&amp;stream=true&amp;show_border=true&amp;appId=172164879660704" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 		</div>
