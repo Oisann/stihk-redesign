@@ -152,7 +152,7 @@ function addAdressaArticle(json) {
 
 function addNewsArticle(json) {
 	var stihknews = $('table.stihknews');
-	var stihknews.html(""); //clear all articles
+	stihknews.html(""); //clear all articles
 	for(var i=0; i<15; i++) {
 		addNewsfeedItem("wat", json[i].text, "/nyheter/" + json[i].id);
 		var changed_date = new Date(json[i].changed * 1000);
