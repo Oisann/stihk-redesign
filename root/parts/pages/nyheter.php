@@ -10,11 +10,11 @@
 	if(!$mysql_query) die('{ "error":"' . mysql_error() . '" }');
 	if(mysql_fetch_array($mysql_query) == null) {
 		echo "			<h1>Error 11</h1>\n";
-		echo "			Fant ingen nyhet med id: " . $id;
+		echo "			Fant ingen nyhet med id: " . $id . "\n";
 	}
 	while ($row = mysql_fetch_array($mysql_query)) {
 		echo "			<h1>" . $row['overskrift'] . "</h1>\n";
-		echo "			" . htmlentities($row['tekst']);
+		echo "			" . htmlentities($row['tekst']) . "\n";
 	}
 	mysql_close($mysql_connection);
 ?>
