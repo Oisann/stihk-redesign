@@ -155,7 +155,7 @@ function addAdressaArticle(json) {
 
 function addNewsArticle(json) {
 	var stihknews = $('table.stihknews');
-	stihknews.html(""); //clear all articles
+	if($('.news h1.center').text() !== "ERROR 404") stihknews.html(""); //clear all articles
 	for(var i=0; i<15; i++) {
 		var article = json[i];
 		if(i == 14) stihknews_ready = true;
@@ -165,7 +165,7 @@ function addNewsArticle(json) {
 		}
 		var changed_date = new Date(article.changed * 1000);
 		addNewsfeedItem(article.headline, article.text, "/nyheter/" + article.id);
-		stihknews.append('<tr><td>' + changed_date.toDateString() + '</td><td><h3 class="headline"><a href="/nyheter/' + article.id + '" class="normal">' + article.headline + '</a></h3>' + article.text + '</td></tr>');
+		if($('.news h1.center').text() ! == "ERROR 404") stihknews.append('<tr><td>' + changed_date.toDateString() + '</td><td><h3 class="headline"><a href="/nyheter/' + article.id + '" class="normal">' + article.headline + '</a></h3>' + article.text + '</td></tr>');
 	}
 }
 
