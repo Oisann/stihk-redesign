@@ -128,7 +128,6 @@ function notification(title, line1, line2) {
 
 function addNewsfeedItem(title, text, link) {
 	$('.newsfeed').append("<span class=\"feeditem\"><a href=\"" + link + "\" target=\"_blank\" alt=\"" + title + "\"><strong>" + title + "</strong>: " + text + "</a></span>");
-	startNewsfeed();
 }
 
 function startNewsfeed() {
@@ -140,6 +139,9 @@ function startNewsfeed() {
 	});
 }
 
+var adressa_ready = false,
+	stihknews_ready = false;
+
 function addAdressaArticle(json) {
 	var adressa = $('table.adressa');
 	adressa.html(""); //clear all articles
@@ -147,6 +149,7 @@ function addAdressaArticle(json) {
 	for(var i=0; i<max; i++) {
 		if(i == 0) addNewsfeedItem("[Adressa] " + json[i].headline, json[i].lead, json[i].link);
 		adressa.append("<tr><td><a href=\"" + json[i].link + "\" class=\"normal\" target=\"_blank\"><img class=\"article\" src=\"" + json[i].image + "\" alt=\"" + json[i].headline + "\" /></a></td><td><h3 class=\"headline\"><a href=\"" + json[i].link + "\" class=\"normal\" target=\"_blank\">" + json[i].headline + "</a></h3>" + json[i].lead + "</td></tr>");
+		if(i == max) adressa_ready = true;
 	}
 }
 
@@ -155,6 +158,8 @@ function addNewsArticle(json) {
 	stihknews.html(""); //clear all articles
 	for(var i=0; i<15; i++) {
 		var article = json[i];
+		console.log('stihk: ' + i);
+		if(i == 15) stihknews_ready = true;
 		if(article == null) return;
 		var changed_date = new Date(article.changed * 1000);
 		addNewsfeedItem(article.headline, article.text, "/nyheter/" + article.id);
@@ -167,6 +172,7 @@ function updateClock() {
 	datetext = d.toTimeString();
 	datetext = datetext.split(' ')[0];
 	clock = $('.clock');
+	if(adressa_ready && stihknews_ready) startNewsfeed();
 	if(clock.text() !== datetext)
 		clock.text(datetext);
 }
