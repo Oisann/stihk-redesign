@@ -147,6 +147,7 @@ function addAdressaArticle(json) {
 	adressa.html(""); //clear all articles
 	var max = 4;
 	for(var i=0; i<max; i++) {
+		console.log('adressa: ' + i);
 		if(i == 0) addNewsfeedItem("[Adressa] " + json[i].headline, json[i].lead, json[i].link);
 		adressa.append("<tr><td><a href=\"" + json[i].link + "\" class=\"normal\" target=\"_blank\"><img class=\"article\" src=\"" + json[i].image + "\" alt=\"" + json[i].headline + "\" /></a></td><td><h3 class=\"headline\"><a href=\"" + json[i].link + "\" class=\"normal\" target=\"_blank\">" + json[i].headline + "</a></h3>" + json[i].lead + "</td></tr>");
 		if(i == max) adressa_ready = true;
@@ -158,7 +159,6 @@ function addNewsArticle(json) {
 	stihknews.html(""); //clear all articles
 	for(var i=0; i<15; i++) {
 		var article = json[i];
-		console.log('stihk: ' + i);
 		if(i == 15) stihknews_ready = true;
 		if(article == null) return;
 		var changed_date = new Date(article.changed * 1000);
