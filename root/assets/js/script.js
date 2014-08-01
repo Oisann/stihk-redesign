@@ -154,7 +154,7 @@ function addNewsArticle(json) {
 	var stihknews = $('table.stihknews');
 	stihknews.html(""); //clear all articles
 	for(var i=0; i<15; i++) {
-		addNewsfeedItem("wat", json[i].text, "/nyheter/" + json[i].id);
+		//addNewsfeedItem("wat", json[i].text, "/nyheter/" + json[i].id);
 		var changed_date = new Date(json[i].changed * 1000);
 		stihknews.append('<tr><td>' + changed_date.toDateString() + '</td><td><h3 class="headline"><a href="/nyheter/' + json[i].id + '" class="normal">' + json[i].headline + '</a></h3>' + json[i].text + '</td></tr>');
 	}
