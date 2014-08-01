@@ -196,10 +196,10 @@ function updateAdressa() {
 function updateNews() {
 	if($('html').hasClass('news')) return;
 	$.ajax({
+		scriptCharset: "utf-8",
 		type: "GET",
 		url: news_url,
 		dataType: "json",
-		contentType: "application/json; charset=utf-8",
 		success: addNewsArticle
 	});
 }
