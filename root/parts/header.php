@@ -20,7 +20,7 @@
 	</head>
 	<body>
 		<header>
-			<a href="<?php echo $funksjoner->fix_linking(); ?>hjem" alt="STIHK - Sør-Trøndelag Ishockeykrets"><div class="logo"></div></a>
+			<a href="<?php echo $funksjoner->fix_linking(); ?>hjem/" alt="STIHK - Sør-Trøndelag Ishockeykrets"><div class="logo"></div></a>
 			<select class="mininav">
 				<option selected disabled>-- Meny --</option>
 				<option>istider</option>
@@ -39,19 +39,19 @@
 			<table class="navigation">
 				<tr>
 					<td>
-						<a href="<?php echo $funksjoner->fix_linking(); ?>istider" alt="Istider">istider</a>
+						<a href="<?php echo $funksjoner->fix_linking(); ?>istider/" alt="Istider">istider</a>
 					</td>
 					<td>
-						<a href="<?php echo $funksjoner->fix_linking(); ?>serier" alt="Serier">serier</a>
+						<a href="<?php echo $funksjoner->fix_linking(); ?>serier/" alt="Serier">serier</a>
 					</td>
 					<td>
-						<a href="<?php echo $funksjoner->fix_linking(); ?>arrangement" alt="Arrangement">arrangement</a>
+						<a href="<?php echo $funksjoner->fix_linking(); ?>arrangement/" alt="Arrangement">arrangement</a>
 					</td>
 					<td>
-						<a href="<?php echo $funksjoner->fix_linking(); ?>dommere" alt="Dommere">dommere</a>
+						<a href="<?php echo $funksjoner->fix_linking(); ?>dommere/" alt="Dommere">dommere</a>
 					</td>
 					<td>
-						<a href="<?php echo $funksjoner->fix_linking(); ?>kontakter" alt="Kontakter">kontakter</a>
+						<a href="<?php echo $funksjoner->fix_linking(); ?>kontakter/" alt="Kontakter">kontakter</a>
 					</td>
 					<td>
 						<a href="#annet" alt="Annet">annet</a>
@@ -72,27 +72,27 @@
 				<table>
 					<tr>
 						<td>
-							<a href="<?php echo $funksjoner->fix_linking(); ?>omoss" alt="Om oss">om oss</a>
+							<a href="<?php echo $funksjoner->fix_linking(); ?>omoss/" alt="Om oss">om oss</a>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="<?php echo $funksjoner->fix_linking(); ?>bestemmelser" alt="Bestemmelser">bestemmelser</a>
+							<a href="<?php echo $funksjoner->fix_linking(); ?>bestemmelser/" alt="Bestemmelser">bestemmelser</a>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="<?php echo $funksjoner->fix_linking(); ?>dokumenter" alt="Dokumenter">dokumenter</a>
+							<a href="<?php echo $funksjoner->fix_linking(); ?>dokumenter/" alt="Dokumenter">dokumenter</a>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="<?php echo $funksjoner->fix_linking(); ?>rom" alt="rom">rom</a>
+							<a href="<?php echo $funksjoner->fix_linking(); ?>rom/" alt="rom">rom</a>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<a href="<?php echo $funksjoner->fix_linking(); ?>lenker" alt="Lenker">lenker</a>
+							<a href="<?php echo $funksjoner->fix_linking(); ?>lenker/" alt="Lenker">lenker</a>
 						</td>
 					</tr>
 				</table>
