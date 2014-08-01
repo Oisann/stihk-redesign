@@ -123,6 +123,6 @@
 				</table>
 			</div>
 			<div class="clock"></div>
-			<div class="newsfeed"><strong>OBS!:</strong> Denne siden er under utvikling...</div>
+			<div class="newsfeed"><strong>Velkommen til STIHK.no</strong></div>
 		</div>
 		<div class="shadow"></div>
