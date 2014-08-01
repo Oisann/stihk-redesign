@@ -8,12 +8,11 @@
 
 	$mysql_query = mysql_query($mysql_selector, $mysql_connection);
 	if(!$mysql_query) die('{ "error":"' . mysql_error() . '" }');
-	$fetch_array = mysql_fetch_array($mysql_query);
-	if($fetch_array == null) {
-		echo "			<h1>Error 11</h1>\n";
-		echo "			Fant ingen nyhet med id: " . $id . "\n";
-	}
-	while ($row = $fetch_array) {
+	while ($row = mysql_fetch_array($mysql_query)) {
+		if($row['overskrift'] == "") {
+			echo "			<h1>Error 11</h1>\n";
+			echo "			Fant ingen nyhet med id: " . $id . "\n";
+		}
 		echo "			<h1>" . $row['overskrift'] . "</h1>\n";
 		echo "			" . htmlentities($row['tekst']) . "\n";
 	}
