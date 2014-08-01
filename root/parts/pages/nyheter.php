@@ -10,12 +10,12 @@
 	if(!$mysql_query) die('{ "error":"' . mysql_error() . '" }');
 
 	while ($row = mysql_fetch_array($mysql_query)) {
-		if(empty($row)) {
+		if($row['overskrift'] == null) {
 			echo "Fant ingen nyhet med id: " . $id;
 			return;
 		}
 		echo "<h1>" . $row['overskrift'] . "</h1>";
-		echo utf8_decode($row['tekst']);
+		echo htmlentities($row['tekst']);
 	}
 	mysql_close($mysql_connection);
 ?>
