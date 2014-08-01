@@ -199,6 +199,7 @@ function updateNews() {
 		type: "GET",
 		url: news_url,
 		dataType: "json",
+		contentType: "application/json; charset=utf-8",
 		success: addNewsArticle
 	});
 }
