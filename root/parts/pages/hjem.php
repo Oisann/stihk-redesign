@@ -7,6 +7,6 @@
 		<div class="news">
 			<h1 class="center">Nyheter</h1>
 			<table class="stihknews">
-				
+				<tr><td><span class="loading" title="Loading..."></span></td></tr>
 			</table>
 		</div>
