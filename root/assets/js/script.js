@@ -7,7 +7,7 @@ var trondheim_url = "https://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondhe
 $(document).ready(function() { //no need for this, since i load it at the bottom of the page. EH
 	var path = $(location).attr('href');
 	try {
-		var filename = path.split('/')[4];
+		var filename = path.split('/')[3];
 		if(filename == "") filename = "hjem";
 	} catch(err) {
 		var filename = 'hjem';
