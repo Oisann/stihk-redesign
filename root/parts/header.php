@@ -15,6 +15,8 @@
 		<meta property="og:updated_time" content="<?php echo time(); ?>" />
 		<link rel="icon" href="<?php echo $funksjoner->fix_linking(); ?>assets/img/favicon.png">
 		<link rel="stylesheet" href="<?php echo $funksjoner->fix_linking(); ?>assets/css/style.css">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
 	</head>
 	<body>
 		<header>
@@ -54,7 +56,7 @@
 					<td>
 						<a href="#annet" alt="Annet">annet</a>
 					</td>
-					<td class="button">
+					<td class="button hidden">
 						<a href="#logginn" alt="Logg inn">logg inn</a>
 					</td>
 				</tr>

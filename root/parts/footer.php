@@ -14,7 +14,7 @@
 				</tr>
 				<tr>
 					<td><strong>Lisensierte spillere:</strong></td>
-					<td>1337</td>
+					<td>1685</td>
 				</tr>
 				<tr>
 					<td><strong>Dommere:</strong></td>
@@ -52,8 +52,6 @@
 		<footer>Copyright Sør-Trøndelag Ishockeykrets &copy; <?php echo date("Y"); ?><br><span class="small">Laget av <a class="normal" target="_blank" href="https://www.oisann.net/">Jonas Refseth</a></span>
 		</footer>
 	</body>
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
 	<script src="<?php echo $funksjoner->fix_linking(); ?>assets/js/jquery.marquee.min.js"></script>
 	<script src="<?php echo $funksjoner->fix_linking(); ?>assets/js/script.js"></script>
 </html>
