@@ -9,6 +9,7 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	try {
 		var filename = path.split('/')[3];
 		if(filename == "") filename = "hjem";
+		if(filename.startsWith('#')) filename = "hjem";
 	} catch(err) {
 		var filename = 'hjem';
 	}
@@ -77,6 +78,12 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	    }
 	});
 });
+
+if (typeof String.prototype.startsWith != 'function') {
+	String.prototype.startsWith = function (str){
+		return this.slice(0, str.length) == str;
+	};
+}
 
 function closeNotification(element) {
 	if($(window).width() <= 711) {
