@@ -30,7 +30,7 @@
 			}
 		}
 	}
-	if(!$error) {
+	if($error) {
 		echo "			<h1>Error 11</h1>\n";
 		echo "			Fant ingen nyhet med id: " . $id . "\n";
 	}
