@@ -20,42 +20,42 @@
 			  <tr>
 				<td class="mindre" bgcolor="#FFFFFF" height="16">STIHK</td>
 				<td class="mindre" height="16"></td>
-				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="regler_bestemmelser/stihk_lover.htm">Lover
+				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="http://stihk.no/regler_bestemmelser/stihk_lover.htm">Lover
 				 for Sør-Tøndelag Ishockeykrets</a></td>
 			  </tr>
 			  <tr>
 				<td class="mindre" bgcolor="#FFFFFF" height="16">STIHK</td>
 				<td class="mindre" height="16"></td>
-				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="regler_bestemmelser/disp_ishall.htm">Regler
+				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="http://stihk.no/regler_bestemmelser/disp_ishall.htm">Regler
 				  for disponering av ishaller</a></td>
 			  </tr>
 			  <tr>
 				<td class="mindre" bgcolor="#FFFFFF" height="16">STIHK</td>
 				<td class="mindre" height="16"></td>
-				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="regler_bestemmelser/kampreglement_stihk.htm">Kampreglement
+				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="http://stihk.no/regler_bestemmelser/kampreglement_stihk.htm">Kampreglement
 				  - tilleggsbestemmelser</a></td>
 			  </tr>
 			  <tr>
 				<td class="mindre" bgcolor="#FFFFFF" height="16">STIHK</td>
 				<td class="mindre" height="16"></td>
-				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="regler_bestemmelser/stihk_rekrutteringsomr.htm">Bestemmelser
+				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="http://stihk.no/regler_bestemmelser/stihk_rekrutteringsomr.htm">Bestemmelser
 				  om rekrutteringsområde for klubbene i Trondheim</a></td>
 			  </tr>
 			  <tr>
 				<td class="mindre" bgcolor="#FFFFFF" height="16">STIHK</td>
 				<td class="mindre" height="16"></td>
-				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="regler_bestemmelser/spilletider.htm">Spilletider</a></td>
+				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="http://stihk.no/regler_bestemmelser/spilletider.htm">Spilletider</a></td>
 			  </tr>
 			  <tr>
 				<td class="mindre" bgcolor="#FFFFFF" height="16">STIHK</td>
 				<td class="mindre" height="16"></td>
-				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="regler_bestemmelser/satser_dommer.htm"> Dommersatser
+				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="http://stihk.no/regler_bestemmelser/satser_dommer.htm"> Dommersatser
 				  2013/2014</a></td>
 			  </tr>
 			  <tr>
 				<td class="mindre" bgcolor="#FFFFFF" height="16">STIHK</td>
 				<td class="mindre" height="16"></td>
-				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="regler_bestemmelser/kontigenter_2002.htm">Kontingenter,
+				<td class="mindre" bgcolor="#FFFFFF" height="16"> <a href="http://stihk.no/regler_bestemmelser/kontigenter_2002.htm">Kontingenter,
 				  avgifter og gebyrer 2013/2014</a></td>
 			  </tr>
 			</table>
