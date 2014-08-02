@@ -55,7 +55,7 @@ while ($row = mysql_fetch_array($retid))
 		echo("<td bgcolor='" . $arr_farge . "'><b>$arr_beskrivelse</b></td>");
 		echo("<td bgcolor='" . $arr_farge . "'>$arr_klasser</td>");
 		echo("<td bgcolor='" . $arr_farge . "'>$arr_sted</td>");
-		echo("<td bgcolor='" . $arr_farge . "'>$arr_arrangor</td>");
+		echo("<td bgcolor='" . $arr_farge . "'>" . htmlentities($arr_arrangor) . "</td>");
 		echo("<td bgcolor='" . $arr_farge . "'>$arr_info</td>");
 		}
 	echo("</tr>");
