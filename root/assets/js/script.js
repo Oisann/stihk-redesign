@@ -179,7 +179,7 @@ function addNewsArticle(json) {
 		}
 		var changed_date = new Date(article.changed * 1000);
 		addNewsfeedItem(article.headline, article.text, "/nyheter/" + article.id);
-		if($('.news h1.center').text() !== "ERROR 404") stihknews.append('<tr><td>' + changed_date.toDateString() + '</td><td><h3 class="headline"><a href="/nyheter/' + article.id + '" class="normal">' + article.headline + '</a></h3>' + article.text + '</td></tr>');
+		if($('.news h1.center').text() !== "ERROR 404") stihknews.append('<tr><td>' + changed_date.getDay() + '.' + changed_date.getMonth() + '.' + changed_date.getYear() + '</td><td><h3 class="headline"><a href="/nyheter/' + article.id + '" class="normal">' + article.headline + '</a></h3>' + article.text + '</td></tr>');
 	}
 }
 
