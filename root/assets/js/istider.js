@@ -11,13 +11,11 @@ function updateIshaller(json) {
 	$('select#ishall').html("<option data-id=\"NaN\" disabled>Velg en ishall</option>");
 	var max = 0;
 	for (property in json) {
-	   if(json.hasOwnProperty(property)) {
-		  max++;
-	   }
+	   console.log(property.code);
 	}
 	for(var i=0; i<max; i++) {
 		var disabled = "";
-		if(json[i].enabled) disabled = " disabled";
+		if(!json[i].enabled) disabled = " disabled";
 		$('select#ishall').append("<option data-id=\"" + json[i].id + "\" " + disabled + ">" + json[i].name + "</option>");
 	}
 }
