@@ -16,7 +16,7 @@
 		$uke = intval(str_replace('.htm', '', $uke));
 		$aar = explode("_", $sesong);
 		if($uke <= 27) { $aar = intval($aar[1]); } else { $aar = intval($aar[0]); };
-		$articles[$uke] = array('first' => intval(strtotime($aar . 'W' . $uke)), 'last' => intval(strtotime($aar . 'W' . $uke . ' + 7 days')));
+		$articles[$uke] = array('first' => date("d.m.Y", intval(strtotime($aar . 'W' . $uke))), 'last' => date("d.m.Y", intval(strtotime($aar . 'W' . $uke . ' + 7 days'))));
 	}
 	echo utf8_encode(html_entity_decode(json_encode($articles)));
 ?>
