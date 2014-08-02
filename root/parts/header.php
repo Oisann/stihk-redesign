@@ -102,22 +102,22 @@
 			<div class="background"></div>
 			<div class="weather">
 				<table>
-					<tr>
+					<tr id="weather-trondheim">
 						<td class="headline">Trondheim Sentrum</td>
 					</tr>
-					<tr>
+					<tr id="weather-trondheim">
 						<td location="trondheim" class="center"><span class="loading" title="Loading..."></span></td>
 					</tr>
-					<tr>
+					<tr id="weather-trondheim">
 						<td class="celsius"><span class="temperature" location="trondheim">N/A</span> °C</td>
 					</tr>
-					<tr>
+					<trid="weather-korsvegen">
 						<td class="headline">Hølonda Utebane</td>
 					</tr>
-					<tr>
+					<tr id="weather-korsvegen">
 						<td location="korsvegen" class="center"><span class="loading" title="Loading..."></span></td>
 					</tr>
-					<tr>
+					<tr id="weather-korsvegen">
 						<td class="celsius"><span class="temperature" location="korsvegen">N/A</span> °C</td>
 					</tr>
 				</table>

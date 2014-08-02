@@ -55,6 +55,14 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 			closeNotification($(this).parent());
 		}
 	});*/
+	
+	$('#weather-korsvegen').click(function() {
+		window.open('http://www.yr.no/sted/Norge/S%C3%B8r-Tr%C3%B8ndelag/Melhus/Korsvegen/','_blank');
+	});
+	
+	$('#weather-trondheim').click(function() {
+		window.open('http://www.yr.no/sted/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondheim/Trondheim/','_blank');
+	});
 
 	$('.navigation a').click(function() {
 	    if($(this).attr("href") === "#logginn") {
