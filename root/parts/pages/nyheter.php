@@ -23,7 +23,7 @@
 				} else {
 					echo "			<div class=\"byline\">Av: " . htmlentities($row['av']) . " - Laget: " . date("d.m.Y H:i:s", $row['laget']) . "</div>\n";
 				}
-				echo "			" . htmlentities($row['tekst']) . "\n";
+				echo "			<pre>" . htmlentities($row['tekst']) . "</pre>\n";
 				echo "			<div class=\"social\"><input type=\"text\" value=\"http://stihk.no/nyheter/" . $id . "\"  disabled> " . $facebook_like . "</div>";
 				$error = false;
 				return;
