@@ -307,6 +307,11 @@ input#lenke {
 	font-style:italic
 }
 
+.lesmer {
+	height: 40px;
+	text-align: right;
+}
+
 @-webkit-keyframes loading {
 	from { background-position:  0px  0px; }
 		to { background-position: 0px -570px; }
