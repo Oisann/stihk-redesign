@@ -22,7 +22,15 @@ function updateIshaller(json) {
 }
 
 function updateUker(json) {
-	console.log("Det er uke:", new Date().getWeekNumber());
+	var uke = new Date().getWeekNumber();
+	$('select#uke').html("");
+	for (property in json) {
+		var select = "";
+		if(json[property].week == uke) {
+			select = "selected";
+		}
+		$('select#uke').append("<option data-week=\"" + json[property].week + "\" " + select + ">Uke " + json[property].week + select == "" ? "" : "*" + " - " + json[property].first + "-" + json[property].last + "</option>");
+	}
 }
 
 $('select#ishall').change(function() {

@@ -5,9 +5,7 @@
 					<option selected disabled>Laster inn ishaller...</option>
 				</select>
 				<select id="uke">
-					<option>Uke 1 - 01.01.14 - 07.01.14</option>
-					<option selected>Uke 2* - 08.01.14 - 14.01.14</option>
-					<option>Uke 3 - 15.01.14 - 22.01.14</option>
+					<option selected disabled>Velg en ishall</option>
 				</select>
 			</div>
 			<iframe src="./2014_2015/uke_23_leangen2.htm" style="border: 0px;width: 100%;min-height: 100%;"></iframe>
