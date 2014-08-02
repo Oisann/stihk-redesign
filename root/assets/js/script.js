@@ -18,7 +18,6 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	updateWeather();
 	updateAdressa();
 	updateNews();
-	notification('Nytt utseende!', 'Ikke alle funksjoner fungerer som de skal enda.', 'De vil fungere igjen om kort tid.');
 	setInterval(function() {
 		updateWeather();
 	}, 12 * 60000); //update every hour
@@ -76,6 +75,11 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	    		morenav.addClass('hidden');
 	    	}
 	    }
+	});
+	$('iframe').load(function() {
+		setTimeout(function() {
+			document.getElementById('istid').style.height = document.getElementById('istid').contentWindow.document.body.offsetHeight + 100 + 'px';
+		}, 500);
 	});
 });
 
