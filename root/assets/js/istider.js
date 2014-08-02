@@ -5,6 +5,12 @@ $.ajax({
 	success: updateIshaller
 });
 
+Date.prototype.getWeekNumber = function(){
+    var d = new Date(+this);
+    d.setHours(0,0,0);
+    d.setDate(d.getDate()+4-(d.getDay()||7));
+    return Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
+};
 
 function updateIshaller(json) {
 	$('select#ishall').html("<option data-id=\"NaN\" selected disabled> - Velg en ishall - </option>");
@@ -16,7 +22,7 @@ function updateIshaller(json) {
 }
 
 function updateUker(json) {
-	console.log("Dette funker vell..");
+	console.log("Det er uke:", new Date().getWeekNumber);
 }
 
 $('select#ishall').change(function() {
