@@ -42,21 +42,21 @@ while ($row = mysql_fetch_array($retid))
 	echo("<tr>");
 	if($arr_unixtid < time())
 		{
-		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'><b>$arr_tidspunkt</b></td>");
-		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'><b>$arr_beskrivelse</b></td>");
-		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'>$arr_klasser</td>");
-		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'>$arr_sted</td>");
-		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'>$arr_arrangor</td>");
-		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'>$arr_info</td>");
+		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'><b>" . htmlentities($arr_tidspunkt) . "</b></td>");
+		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'><b>" . htmlentities($arr_beskrivelse) . "</b></td>");
+		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'>" . htmlentities($arr_klasser) . "</td>");
+		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'>" . htmlentities($arr_sted) . "</td>");
+		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'>" . htmlentities($arr_arrangor) . "</td>");
+		echo("<td bgcolor='" . fadecol($arr_farge,0.75) . "'>" . htmlentities($arr_info) . "</td>");
 		}
 	else
 		{
-		echo("<td bgcolor='" . $arr_farge . "'><b>$arr_tidspunkt</b></td>");
-		echo("<td bgcolor='" . $arr_farge . "'><b>$arr_beskrivelse</b></td>");
-		echo("<td bgcolor='" . $arr_farge . "'>$arr_klasser</td>");
-		echo("<td bgcolor='" . $arr_farge . "'>$arr_sted</td>");
+		echo("<td bgcolor='" . $arr_farge . "'><b>" . htmlentities($arr_tidspunkt) . "</b></td>");
+		echo("<td bgcolor='" . $arr_farge . "'><b>" . htmlentities($arr_beskrivelse) . "</b></td>");
+		echo("<td bgcolor='" . $arr_farge . "'>" . htmlentities($arr_klasser) . "</td>");
+		echo("<td bgcolor='" . $arr_farge . "'>" . htmlentities($arr_sted) . "</td>");
 		echo("<td bgcolor='" . $arr_farge . "'>" . htmlentities($arr_arrangor) . "</td>");
-		echo("<td bgcolor='" . $arr_farge . "'>$arr_info</td>");
+		echo("<td bgcolor='" . $arr_farge . "'>" . htmlentities($arr_info) . "</td>");
 		}
 	echo("</tr>");
 	}
