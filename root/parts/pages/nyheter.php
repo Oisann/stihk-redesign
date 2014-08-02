@@ -9,7 +9,7 @@
 	$mysql_query = mysql_query($mysql_selector, $mysql_connection);
 	if(!$mysql_query) die('{ "error":"' . mysql_error() . '" }');
 	while ($row = mysql_fetch_array($mysql_query)) {
-		if(empty($id)) {
+		if($id == 'error') {
 			echo '<div class="news"><h1 class="center">Nyheter</h1><table class="stihknews"><tr><td><span class="loading" title="Loading..."></span></td></tr></table></div>';
 		} else {
 			if($row['id'] == $id) {
