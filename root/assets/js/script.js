@@ -178,7 +178,7 @@ function addNewsArticle(json) {
 			return;
 		}
 		var changed_date = new Date(article.changed * 1000);
-		var changed_article = article.changed == article.date ? '' : '<img src="http://stihk.no/assets/img/updated.png" />';
+		var changed_article = article.changed == article.date ? '' : ' <img src="http://stihk.no/assets/img/updated.png" />';
 		addNewsfeedItem(article.headline, article.text, "/nyheter/" + article.id);
 		if($('.news h1.center').text() !== "ERROR 404") stihknews.append('<tr><td>' + leadingZero(changed_date.getDay()) + '.' + leadingZero(changed_date.getMonth()) + '.' + changed_date.getFullYear() + '</td><td><h3 class="headline"><a href="/nyheter/' + article.id + '" class="normal">' + article.headline + '</a>' + changed_article + '</h3>' + shorten(article.text) + '</td></tr><tr class="lesmer"><td></td><td><a href="/nyheter/' + article.id + '" class="normal" style="font-weight: bold">Les mer...</a></td></tr>');
 	}
