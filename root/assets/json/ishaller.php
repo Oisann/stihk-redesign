@@ -15,7 +15,9 @@
 	$articles = array();
 	while ($row = mysql_fetch_array($mysql_query)) {
 		$aktiv = (intval($row['sortering']) != 999);
-		$articles[intval($row['sortering'])] = array('id' => intval($row['id']), 'enabled' => $aktiv, 'code' => htmlentities($row['kode']), 'short' => htmlentities($row['kortnavn']), 'name' => htmlentities($row['navn']), 'listname' => htmlentities($row['listenavn']));
+		$array_count = intval($row['sortering']);
+		if($articles[$array_count]) $array_count++;
+		$articles[$array_count] = array('id' => intval($row['id']), 'enabled' => $aktiv, 'code' => htmlentities($row['kode']), 'short' => htmlentities($row['kortnavn']), 'name' => htmlentities($row['navn']), 'listname' => htmlentities($row['listenavn']));
 	}
 	mysql_close($mysql_connection);
 	echo utf8_encode(html_entity_decode(json_encode($articles)));
