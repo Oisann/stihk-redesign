@@ -9,7 +9,7 @@
 	
 	if(empty($id) || empty($sesong)) die('{ "error" : "Missing arguments" }');
 	
-	$istider = glob('../../istider/*'); // . $sesong . 'uke_*' . $id . '.htm');
+	$istider = glob('../../istider/' . $sesong . '/uke_*' . $id . '.htm');
 	foreach($istider as $istid) {
 		echo $istid . '<br>';
 	}
