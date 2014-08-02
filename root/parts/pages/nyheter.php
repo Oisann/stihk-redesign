@@ -13,7 +13,7 @@
 		if($id == 'error') {
 			echo '<h1 class="center">Nyheter</h1><table class="stihknews"><tr><td><span class="loading" title="Loading..."></span></td></tr></table>';
 			$error = false;
-			continue;
+			break;
 		} else {
 			if($row['id'] == $id) {
 				echo "			<h1>" . htmlentities($row['overskrift']) . "</h1>\n";
@@ -26,7 +26,7 @@
 				echo "			<pre>" . htmlentities($row['tekst']) . "</pre>\n";
 				echo "			<div class=\"social\"><input type=\"text\" value=\"http://stihk.no/nyheter/" . $id . "\"  disabled> " . $facebook_like . "</div>";
 				$error = false;
-				continue;
+				break;
 			}
 		}
 	}
