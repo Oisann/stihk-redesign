@@ -11,14 +11,24 @@ function updateIshaller(json) {
 	for (property in json) {
 		var disabled = "";
 		if(!json[property].enabled) disabled = " disabled";
-		$('select#ishall').append("<option data-id=\"" + json[property].id + "\" " + disabled + ">" + json[property].name + "</option>");
+		$('select#ishall').append("<option data-id=\"" + json[property].listname + "\" " + disabled + ">" + json[property].name + "</option>");
 	}
+}
+
+function updateUker(json) {
+	console.log("Dette funker vell..");
 }
 
 $('select#ishall').change(function() {
 	$("select#ishall option:selected" ).each(function() {
 		var name = $(this).text(),
-			id = $(this).attr("data-id");
-		console.log("Selected", name, id);
+			id = $(this).attr("data-id"),
+			season = $("span#season").text();
+		$.ajax({
+			type: "GET",
+			url: "http://stihk.no/assets/json/ishaller_uker.json?id=" + id + "&season=" + season,
+			dataType: "json",
+			success: updateUker
+		});
     });
 });

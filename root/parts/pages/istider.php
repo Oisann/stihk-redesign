@@ -1,5 +1,5 @@
 ﻿		<div class="news" style="padding-left: 10px; margin-right: -10px">
-			<h1>Istider <?php echo $funksjoner->sesong(); ?></h1>
+			<h1>Istider <span id="season"><?php echo $funksjoner->sesong(); ?></span></h1>
 			<div class="settings">
 				<select id="ishall">
 					<option selected disabled>Laster inn ishaller...</option>
