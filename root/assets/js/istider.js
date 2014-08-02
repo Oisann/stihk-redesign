@@ -1,3 +1,6 @@
+var selected_ishall = "",
+	season = $("span#season").text().replace("/", "_");
+
 $.ajax({
 	type: "GET",
 	url: "http://stihk.no/assets/json/ishaller.json",
@@ -30,21 +33,27 @@ function updateUker(json) {
 		if(json[property].week == uke) {
 			select = "selected";
 			star = "*";
-			$('iframe#istid').attr("src", "./2014_2015/uke_23_leangen2.htm");
+			$('iframe#istid').attr("src", "./" + season + "/uke_" + uke + "_" + selected_ishall + ".htm");
 		}
 		$('select#uke').append("<option data-week=\"" + json[property].week + "\" " + select + ">Uke " + json[property].week + star + " - " + json[property].first + "-" + json[property].last + "</option>");
 	}
 }
 
+$('select#uke').change(function() {
+	$("select#uke option:selected" ).each(function() {
+		var selected_week = $(this).attr("data-week");
+		$('iframe#istid').attr("src", "./" + season + "/uke_" + selected_week + "_" + selected_ishall + ".htm");
+	}
+});
+
 $('select#ishall').change(function() {
 	$("select#ishall option:selected" ).each(function() {
-		var name = $(this).text(),
-			id = $(this).attr("data-id"),
-			season = $("span#season").text().replace("/", "_");
+		var name = $(this).text();
+		selected_ishall = $(this).attr("data-id");
 		$('select#uke').html("<option selected disabled>Velg en ishall</option>");
 		$.ajax({
 			type: "GET",
-			url: "http://stihk.no/assets/json/istider.json?id=" + id + "&season=" + season,
+			url: "http://stihk.no/assets/json/istider.json?id=" + selected_ishall + "&season=" + season,
 			dataType: "json",
 			success: updateUker
 		});
