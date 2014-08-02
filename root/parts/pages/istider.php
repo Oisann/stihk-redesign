@@ -3,11 +3,11 @@
 <table border="1" cellspacing="1" bgcolor="#CCCCCC" bordercolor="#808080">
 <?php
 $mysql_connection = mysql_connect($mysql_host,$mysql_user,$mysql_password);
-	if (!$mysql_connection) die('{ "error":"mysql connection failed" }');
-	if (!mysql_select_db($mysql_database, $mysql_connection)) die('{ "error":"mysql database not found" }');
+if (!$mysql_connection) die('{ "error":"mysql connection failed" }');
+if (!mysql_select_db($mysql_database, $mysql_connection)) die('{ "error":"mysql database not found" }');
 //leser hall-listen
 $sqlstring = "select * from stihk_haller WHERE aktiv = 1 AND hall_islistenavn <> '' ORDER BY hall_sortering ASC, hall_navn ASC;";
-$retid_haller = mysql_db_query($db, $sqlstring);
+$retid_haller = mysql_db_query($mysql_host, $sqlstring);
 if (!$retid_haller) { echo( mysql_error()); }
 
 $mappenavn = "istider/" . str_replace("/","_",$sesong);
