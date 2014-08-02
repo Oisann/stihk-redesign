@@ -25,12 +25,14 @@ function updateUker(json) {
 	var uke = new Date().getWeekNumber();
 	$('select#uke').html("");
 	for (property in json) {
-		var select = "";
+		var select = "",
+			star = "";
 		if(json[property].week == uke) {
 			select = "selected";
+			star = "*";
 			$('iframe#istid').attr("src", "./2014_2015/uke_23_leangen2.htm");
 		}
-		$('select#uke').append("<option data-week=\"" + json[property].week + "\" " + select + ">Uke " + json[property].week + " - " + json[property].first + "-" + json[property].last + "</option>");
+		$('select#uke').append("<option data-week=\"" + json[property].week + "\" " + select + ">Uke " + json[property].week + star + " - " + json[property].first + "-" + json[property].last + "</option>");
 	}
 }
 
