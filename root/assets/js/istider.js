@@ -17,7 +17,7 @@ function updateIshaller(json) {
 	}
 	for(var i=0; i<max; i++) {
 		var disabled = "";
-		if(property.enabled) disabled = " disabled";
-		$('select#ishall').append("<option data-id=\"" + property.id + "\" " + disabled + ">" + property.name + "</option>");
+		if(json[i].enabled) disabled = " disabled";
+		$('select#ishall').append("<option data-id=\"" + json[i].id + "\" " + disabled + ">" + json[i].name + "</option>");
 	}
 }
