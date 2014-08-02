@@ -190,7 +190,7 @@ function shorten(text) {
 			result = "";
 		for(word in innledning) {
 			if(result.length <= 130) {
-				result += " " + word;
+				result += " " + innledning[word];
 			}
 		}
 		return result + "...";
