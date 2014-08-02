@@ -197,6 +197,7 @@ table.adressa .headline {
 table.stihknews {
 	margin: 0px 20px 20px 16px;
 	font-size: 11px;
+	white-space: pre-line;
 }
 
 table.stihknews .headline {
@@ -295,6 +296,10 @@ input#lenke {
 	position: absolute;
 	margin-top: -1px;
 	left: 150px;
+}
+
+.nyhetstekts {
+	white-space: pre-line;
 }
 
 .byline {
