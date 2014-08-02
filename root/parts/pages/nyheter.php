@@ -11,7 +11,7 @@
 	$error = true;
 	while ($row = mysql_fetch_array($mysql_query)) {
 		if($id == 'error') {
-			echo '<div class="news"><h1 class="center">Nyheter</h1><table class="stihknews"><tr><td><span class="loading" title="Loading..."></span></td></tr></table></div>';
+			echo '<h1 class="center">Nyheter</h1><table class="stihknews"><tr><td><span class="loading" title="Loading..."></span></td></tr></table>';
 			$error = false;
 			return;
 		} else {
