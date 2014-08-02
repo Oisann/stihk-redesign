@@ -46,6 +46,12 @@ $('select#uke').change(function() {
 	});
 });
 
+$('iframe').load(function() {
+	setTimeout(function() {
+		document.getElementById('istid').style.height = document.getElementById('istid').contentWindow.document.body.offsetHeight + 100 + 'px';
+	}, 500);
+});
+
 $('select#ishall').change(function() {
 	$("select#ishall option:selected" ).each(function() {
 		var name = $(this).text();
