@@ -19,12 +19,12 @@
 				echo "			<h1>" . htmlentities($row['overskrift']) . "</h1>\n";
 				$facebook_like = '<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fstihk.no%2Fnyheter%2F' . $id . '&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=false&amp;share=true&amp;height=21&amp;appId=172164879660704" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>';
 				if($row['laget'] != $row['endret']) {
-					echo "			<span class=\"byline\">Av: " . htmlentities($row['av']) . " - Laget: " . date("d.m.Y H:i:s", $row['laget']) . " - Endret: " . date("d.m.Y H:i:s", $row['endret']) . "</div>\n";
+					echo "			<div class=\"byline\">Av: " . htmlentities($row['av']) . " - Laget: " . date("d.m.Y H:i:s", $row['laget']) . " - Endret: " . date("d.m.Y H:i:s", $row['endret']) . "</div>\n";
 				} else {
 					echo "			<div class=\"byline\">Av: " . htmlentities($row['av']) . " - Laget: " . date("d.m.Y H:i:s", $row['laget']) . "</div>\n";
 				}
 				echo "			" . htmlentities($row['tekst']) . "\n";
-				echo "			<div class=\"social\"><input type=\"text\" value=\"http://STI.HK/n/" . $id . "\"  disabled> " . $facebook_like . "</div>";
+				echo "			<div class=\"social\"><input type=\"text\" value=\"http://stihk.no/nyheter/" . $id . "\"  disabled> " . $facebook_like . "</div>";
 				$error = false;
 				return;
 			}
@@ -36,4 +36,4 @@
 	}
 	mysql_close($mysql_connection);
 ?>
-		</div title="lol">
+		</div>
