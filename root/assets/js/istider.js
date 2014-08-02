@@ -11,7 +11,7 @@ function updateIshaller(json) {
 	$('select#ishall').html("<option data-id=\"NaN\" disabled>Velg en ishall</option>");
 	var max = 0;
 	for (property in json) {
-	   console.log(property.code);
+	   console.log(property);
 	}
 	for(var i=0; i<max; i++) {
 		var disabled = "";
