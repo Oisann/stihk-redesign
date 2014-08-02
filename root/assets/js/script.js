@@ -79,7 +79,7 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	$('iframe').load(function() {
 		setTimeout(function() {
 			document.getElementById('istid').style.height = document.getElementById('istid').contentWindow.document.body.offsetHeight + 100 + 'px';
-		}, 500);
+		}, 5);
 	});
 });
 
