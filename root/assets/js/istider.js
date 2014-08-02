@@ -23,7 +23,7 @@ $('select#ishall').change(function() {
 	$("select#ishall option:selected" ).each(function() {
 		var name = $(this).text(),
 			id = $(this).attr("data-id"),
-			season = $("span#season").text();
+			season = $("span#season").text().replace("/", "_");
 		$.ajax({
 			type: "GET",
 			url: "http://stihk.no/assets/json/ishaller_uker.json?id=" + id + "&season=" + season,
