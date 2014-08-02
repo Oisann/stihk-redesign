@@ -1,4 +1,4 @@
-		<div class="news" style="padding-left: 10px; margin-right: -10px">
+ï»¿		<div class="news" style="padding-left: 10px; margin-right: -10px">
 			<h2>Istider <?php echo($sesong)?></h2>
 <table border="1" cellspacing="1" bgcolor="#CCCCCC" bordercolor="#808080">
 <?php
@@ -8,7 +8,7 @@ $retid_haller = mysql_db_query($db, $sqlstring, $cid);
 if (!$retid_haller) { echo( mysql_error()); }
 
 $mappenavn = "istider/" . str_replace("/","_",$sesong);
-// lager et sortert array som inneholder ukenummeret på alle de "uke_<ukenr>.zip"  som er lagt ut i istidsmappen
+// lager et sortert array som inneholder ukenummeret pÃ¥ alle de "uke_<ukenr>.zip"  som er lagt ut i istidsmappen
 $mappe = opendir($mappenavn . "/");
 $weeklist = array();
 $weeklist_keys = array();
@@ -30,9 +30,9 @@ while (false !== ($fil_navn = readdir($mappe)))
 		}
 	}
 array_multisort($weeklist_keys,SORT_DESC,SORT_NUMERIC,$weeklist);
-// beregner ukenummeret på gjeldende uke
+// beregner ukenummeret pÃ¥ gjeldende uke
 $denne_uken = strftime("%V",time());
-// beregner dato på mandag i uke 1 i begge sesongens år
+// beregner dato pÃ¥ mandag i uke 1 i begge sesongens Ã¥r
 $dag_i_uke1 = strtotime("4 january " . substr($sesong,0,4));
 $dag_i_uke1_2 = strtotime("4 january " . substr($sesong,5,4));
 if(date("w", $dag_i_uke1)==1)
@@ -136,12 +136,12 @@ for ($j = 1; $j <= $antall_haller; $j++)
 	echo("<td bgcolor='#FFFFFF'>");
 	if (file_exists("$mappenavn/_isfordeling_h_$islistenavn[$j].htm"))
 		{
-		echo "<a href='$mappenavn/_isfordeling_h_$islistenavn[$j].htm'>Høst</a>";
+		echo "<a href='$mappenavn/_isfordeling_h_$islistenavn[$j].htm'>HÃ¸st</a>";
 		}
 	echo("<br>");
 	if (file_exists("$mappenavn/_isfordeling_v_$islistenavn[$j].htm"))
 		{
-		echo "<a href='$mappenavn/_isfordeling_v_$islistenavn[$j].htm'>Vår</a>";
+		echo "<a href='$mappenavn/_isfordeling_v_$islistenavn[$j].htm'>VÃ¥r</a>";
 		}
 	echo("</td>");
 	}
