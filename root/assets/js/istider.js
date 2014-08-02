@@ -28,7 +28,7 @@ function updateUker(json) {
 		var select = "";
 		if(json[property].week == uke) {
 			select = "selected";
-			$('iframe#istid').attr("src") = "./2014_2015/uke_23_leangen2.htm";
+			$('iframe#istid').attr("src", "./2014_2015/uke_23_leangen2.htm");
 		}
 		$('select#uke').append("<option data-week=\"" + json[property].week + "\" " + select + ">Uke " + json[property].week + select == "" ? "" : "*" + " - " + json[property].first + "-" + json[property].last + "</option>");
 	}
