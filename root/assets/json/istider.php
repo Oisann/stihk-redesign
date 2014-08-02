@@ -9,16 +9,14 @@
 	
 	if(empty($id) || empty($sesong)) die('{ "error" : "Missing arguments" }');
 	
-	$istider = glob('../../istider/' . $sesong . '/uke_*' . $id . '.htm');
-	foreach($istider as $istid) {
-		echo $istid . '<br>';
-	}
-	die();
 	$articles = array();
-	while ($row = mysql_fetch_array($mysql_query)) {
-		
-		$articles[$array_count] = array('id' => intval($row['id']), 'enabled' => $aktiv, 'code' => htmlentities($row['kode']), 'short' => htmlentities($row['kortnavn']), 'name' => htmlentities($row['navn']), 'listname' => htmlentities($row['listenavn']));
+	$istider = glob('../../istider/' . $sesong . '/uke_*' . $id . '.htm');
+	foreach($istider as $uke) {
+		$uke = str_replace('../../istider/' . $sesong . '/uke_', '', $uke);
+		$uke = intval(str_replace('.htm', '', $uke));
+		$aar = explode("_", $sesong);
+		if($uke <= 27) { $aar = intval($aar[1]); } else { $aar = intval($aar[0]); };
+		$articles[$uke] = array('first' => intval(strtotime($aar . 'W' . $uke)), 'last' => intval(strtotime($aar . 'W' . $uke . ' + 7 days')));
 	}
-	
 	echo utf8_encode(html_entity_decode(json_encode($articles)));
 ?>
