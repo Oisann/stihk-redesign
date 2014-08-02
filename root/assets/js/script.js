@@ -184,7 +184,7 @@ function addNewsArticle(json) {
 }
 
 function leadingZero(num) {
-	return num <= 9 ? parseInt("0" + num) : num;
+	return num <= 9 ? "0" + num : num;
 }
 
 function updateClock() {
