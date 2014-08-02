@@ -43,7 +43,7 @@ $('select#uke').change(function() {
 	$("select#uke option:selected" ).each(function() {
 		var selected_week = $(this).attr("data-week");
 		$('iframe#istid').attr("src", "./" + season + "/uke_" + selected_week + "_" + selected_ishall + ".htm");
-	}
+	});
 });
 
 $('select#ishall').change(function() {
