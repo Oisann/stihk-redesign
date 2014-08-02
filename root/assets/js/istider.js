@@ -22,7 +22,7 @@ function updateIshaller(json) {
 }
 
 function updateUker(json) {
-	console.log("Det er uke:", new Date().getWeekNumber);
+	console.log("Det er uke:", new Date().getWeekNumber());
 }
 
 $('select#ishall').change(function() {
@@ -32,7 +32,7 @@ $('select#ishall').change(function() {
 			season = $("span#season").text().replace("/", "_");
 		$.ajax({
 			type: "GET",
-			url: "http://stihk.no/assets/json/ishaller_uker.json?id=" + id + "&season=" + season,
+			url: "http://stihk.no/assets/json/istider.json?id=" + id + "&season=" + season,
 			dataType: "json",
 			success: updateUker
 		});
