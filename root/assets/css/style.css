@@ -285,6 +285,17 @@ span.small {
 	right: 10px;
 }
 
+.social {
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid;
+}
+
+.byline {
+	font-size: 10px;
+	font-style:italic
+}
+
 @-webkit-keyframes loading {
 	from { background-position:  0px  0px; }
 		to { background-position: 0px -570px; }

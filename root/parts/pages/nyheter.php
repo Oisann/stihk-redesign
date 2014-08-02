@@ -24,7 +24,7 @@
 					echo "			<div class=\"byline\">Av: " . htmlentities($row['av']) . " - Laget: " . date("d.m.Y H:i:s", $row['laget']) . "</div>\n";
 				}
 				echo "			" . htmlentities($row['tekst']) . "\n";
-				echo "			<div class=\"social\">Lenke: <input type=\"text\" value=\"http://STI.HK/n/" . $id . "\"  disabled> " . $facebook_like . "</div>";
+				echo "			<div class=\"social\"><input type=\"text\" value=\"http://STI.HK/n/" . $id . "\"  disabled> " . $facebook_like . "</div>";
 				$error = false;
 				return;
 			}
@@ -36,4 +36,4 @@
 	}
 	mysql_close($mysql_connection);
 ?>
-		</div>
+		</div title="lol">
