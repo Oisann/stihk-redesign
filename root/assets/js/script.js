@@ -179,8 +179,23 @@ function addNewsArticle(json) {
 		}
 		var changed_date = new Date(article.changed * 1000);
 		addNewsfeedItem(article.headline, article.text, "/nyheter/" + article.id);
-		if($('.news h1.center').text() !== "ERROR 404") stihknews.append('<tr><td>' + leadingZero(changed_date.getDay()) + '.' + leadingZero(changed_date.getMonth()) + '.' + changed_date.getFullYear() + '</td><td><h3 class="headline"><a href="/nyheter/' + article.id + '" class="normal">' + article.headline + '</a></h3>' + article.text + '</td></tr>');
+		if($('.news h1.center').text() !== "ERROR 404") stihknews.append('<tr><td>' + leadingZero(changed_date.getDay()) + '.' + leadingZero(changed_date.getMonth()) + '.' + changed_date.getFullYear() + '</td><td><h3 class="headline"><a href="/nyheter/' + article.id + '" class="normal">' + article.headline + '</a></h3>' + shorten(article.text) + '</td></tr>');
 	}
+}
+
+function shorten(text) {
+	var length = text.length;
+	if(length > 130) {
+		var innledning = text.split(" "),
+			result = "";
+		for(word in innledning) {
+			if(result.length <= 130) {
+				result += " " + word;
+			}
+		}
+		return result + "...";
+	}
+	return text;
 }
 
 function leadingZero(num) {
