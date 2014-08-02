@@ -16,5 +16,9 @@ function updateIshaller(json) {
 }
 
 $('select#ishall').change(function() {
-	console.log(this.selected.text);
+	$("select#ishall option:selected" ).each(function() {
+		var name = $(this).text(),
+			id = $(this).attr("data-id");
+		console.log("Selected", name, id);
+    });
 });
