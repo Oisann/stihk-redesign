@@ -39,7 +39,7 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	});
 
 	$(".mininav").change(function() {
-		window.location.href = "./" + $(this).find(":selected").text().replace(/ /g, "") + "/";
+		window.location.href = "/" + $(this).find(":selected").text().replace(/ /g, "") + "/";
 	});
 
 	$('.menu td').click(function(e) {
