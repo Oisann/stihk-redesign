@@ -18,7 +18,7 @@
 					foreach($istider as $uke) {
 						echo "<a href=\"$uke\">" . $uke . "</a><br>";
 					}
-					echo '../../istider/' . $sesong . '/*.htm';
+					echo $istider[0];
 				?>
 			</div>
 		</div>
