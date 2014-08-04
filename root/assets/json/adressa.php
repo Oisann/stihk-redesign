@@ -1,1 +1,0 @@
-<?php echo file_get_contents('https://oisann.net/adressa/ishockey/'); ?>

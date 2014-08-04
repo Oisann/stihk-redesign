@@ -1,1 +1,0 @@
-<?php echo file_get_contents('http://www.yr.no/sted/Norge/S%C3%B8r-Tr%C3%B8ndelag/Melhus/Korsvegen/varsel.xml'); ?>
