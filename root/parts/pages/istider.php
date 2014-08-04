@@ -18,7 +18,7 @@
 					foreach($istider as $uke) {
 						echo "<a href=\"$uke\">" . $uke . "</a><br>";
 					}
-					echo $istider[0];
+					echo $istider;
 				?>
 			</div>
 		</div>
