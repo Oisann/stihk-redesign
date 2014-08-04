@@ -24,7 +24,7 @@
 					echo "			<div class=\"byline\">Av: " . htmlentities($row['av']) . " - Laget: " . date("d.m.Y H:i:s", $row['laget']) . "</div>\n";
 				}
 				echo "			<span class=\"nyhetstekts\">" . htmlentities($row['tekst']) . "</span>\n";
-				echo "			<div class=\"social\"><input id=\"lenke\" type=\"text\" value=\"http://stihk.no/nyheter/" . $id . "\"  disabled> " . $facebook_like . "</div>";
+				echo "			<div class=\"social\"><input id=\"lenke\" type=\"text\" value=\"http://stihk.no/nyheter/" . $id . "\"> " . $facebook_like . "</div>";
 				$error = false;
 				break;
 			}
