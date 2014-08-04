@@ -1,0 +1,1 @@
+<?php header('Location: http://stihk.no/kontor/index.html'); ?>
