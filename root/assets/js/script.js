@@ -176,7 +176,7 @@ function addAdressaArticle(json) {
 }
 
 function timeToDate(format, time) {
-	$.get("dato.php?format=" + format + "&tid=" + time, function( data ) {
+	$.get("/dato.php?format=" + format + "&tid=" + time, function( data ) {
 		return data;
 	});
 }
