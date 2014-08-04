@@ -37,7 +37,6 @@ function updateUker(json) {
 		}
 		$('select#uke').append("<option data-week=\"" + json[property].week + "\" " + select + ">Uke " + json[property].week + star + " - " + json[property].first + "-" + json[property].last + "</option>");
 	}
-	if($("select#uke").children().length === 1 && $('select#uke option').text() === "<- Velg en ishall først") $("select#uke").html("<option selected disabled>Denne ishallen har ingen isfordelinger enda</option>");
 }
 
 $('select#uke').change(function() {
