@@ -6,7 +6,7 @@
 					<option selected disabled>Laster inn ishaller...</option>
 				</select>
 				<select id="uke">
-					<option selected disabled>Velg en ishall</option>
+					<option selected disabled><- Velg en ishall først</option>
 				</select>
 			</div>
 			<iframe id="istid" src="" style="border: 0px;width: 100%;"></iframe>
