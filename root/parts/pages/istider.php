@@ -13,10 +13,11 @@
 			<script src="<?php echo $funksjoner->fix_linking(); ?>assets/js/istider.js"></script>
 			<div class="istider-liste">
 				<?php
-					$istider = glob('../../../istider/' . $sesong . '/*.htm');
+					$istider = glob('../../istider/' . $sesong . '/*.htm');
 					foreach($istider as $uke) {
 						echo "<a href=\"$uke\">" . $uke . "</a><br>";
 					}
+					echo '../../istider/' . $sesong . '/*.htm';
 				?>
 			</div>
 		</div>
