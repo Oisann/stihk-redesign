@@ -14,7 +14,7 @@
 			<div class="istider-liste">
 				<?php
 					$sesong = str_replace('/', '_', $funksjoner->sesong());
-					$istider = glob('../../istider/' . $sesong . '/*.htm');
+					$istider = glob('../../../istider/' . $sesong . '/*.htm');
 					foreach($istider as $uke) {
 						echo "<a href=\"$uke\">" . $uke . "</a><br>";
 					}
