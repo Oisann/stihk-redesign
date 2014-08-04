@@ -17,6 +17,7 @@
 					foreach($istider as $uke) {
 						echo "<a href=\"$uke\">" . $uke . "</a><br>";
 					}
+					echo '../../istider/' . $funksjoner->sesong() . '/*.htm';
 				?>
 			</div>
 		</div>
