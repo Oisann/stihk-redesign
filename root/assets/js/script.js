@@ -176,13 +176,9 @@ function addAdressaArticle(json) {
 }
 
 function timeToDate(format, time) {
-	var done = false,
-		result = "n/a";
-	$.get("/dato.php?format=" + format + "&tid=" + time, function( data ) {
-		result = data;
-		done = true;
+	$.get("/dato.php?format=" + format + "&tid=" + parseInt(time), function( data ) {
+		console.log(data);
 	});
-	if(done) return result;
 }
 
 function addNewsArticle(json) {
