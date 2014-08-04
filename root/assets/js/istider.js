@@ -1,4 +1,4 @@
-var selected_ishall = "",
+ï»¿var selected_ishall = "",
 	season = $("span#season").text().replace("/", "_");
 
 $.ajax({
@@ -37,7 +37,7 @@ function updateUker(json) {
 		}
 		$('select#uke').append("<option data-week=\"" + json[property].week + "\" " + select + ">Uke " + json[property].week + star + " - " + json[property].first + "-" + json[property].last + "</option>");
 	}
-	if($("select#uke").children().length === 1 && $('select#uke option').text() === "<- Velg en ishall først") $("select#uke").html("<option selected disabled>Denne ishallen har ingen isfordelinger enda</option>");
+	if($("select#uke").children().length === 1 && $('select#uke option').text() === "<- Velg en ishall fÃ¸rst") $("select#uke").html("<option selected disabled>Denne ishallen har ingen isfordelinger enda</option>");
 }
 
 $('select#uke').change(function() {
@@ -51,7 +51,7 @@ $('select#ishall').change(function() {
 	$("select#ishall option:selected" ).each(function() {
 		var name = $(this).text();
 		selected_ishall = $(this).attr("data-id");
-		$('select#uke').html("<option selected disabled><- Velg en ishall først</option>");
+		$('select#uke').html("<option selected disabled><- Velg en ishall fÃ¸rst</option>");
 		$.ajax({
 			type: "GET",
 			url: "http://stihk.no/assets/json/istider.json?id=" + selected_ishall + "&season=" + season,
