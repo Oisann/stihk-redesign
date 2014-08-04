@@ -175,6 +175,12 @@ function addAdressaArticle(json) {
 	}
 }
 
+function timeToDate(format, time) {
+	$.get("dato.php?format=" + format + "&tid=" + time, function( data ) {
+		return data;
+	});
+}
+
 function addNewsArticle(json) {
 	var stihknews = $('table.stihknews');
 	if($('.news h1.center').text() !== "ERROR 404") stihknews.html(""); //clear all articles
@@ -188,7 +194,7 @@ function addNewsArticle(json) {
 		var changed_date = new Date(article.changed * 1000);
 		var changed_article = article.changed == article.date ? '' : ' <img src="http://stihk.no/assets/img/updated.png" />';
 		addNewsfeedItem(article.headline, shorten(article.text), "/nyheter/" + article.id);
-		if($('.news h1.center').text() !== "ERROR 404") stihknews.append('<tr><td>' + leadingZero(changed_date.getDay()) + '.' + leadingZero(changed_date.getMonth()) + '.' + changed_date.getFullYear() + '</td><td><h3 class="headline"><a href="/nyheter/' + article.id + '" class="normal">' + article.headline + '</a>' + changed_article + '</h3>' + shorten(article.text) + '</td></tr><tr class="lesmer"><td></td><td><a href="/nyheter/' + article.id + '" class="normal" style="font-weight: bold">Les mer...</a></td></tr>');
+		if($('.news h1.center').text() !== "ERROR 404") stihknews.append('<tr><td>' + timeToDate("d.m.Y H:i:s", article.changed) + '</td><td><h3 class="headline"><a href="/nyheter/' + article.id + '" class="normal">' + article.headline + '</a>' + changed_article + '</h3>' + shorten(article.text) + '</td></tr><tr class="lesmer"><td></td><td><a href="/nyheter/' + article.id + '" class="normal" style="font-weight: bold">Les mer...</a></td></tr>');
 	}
 }
 
