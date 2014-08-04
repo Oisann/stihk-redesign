@@ -176,9 +176,18 @@ function addAdressaArticle(json) {
 }
 
 function timeToDate(format, time) {
-	$.get("/dato.php?format=" + format + "&tid=" + parseInt(time), function( data ) {
-		console.log(data);
-	});
+     var result = null;
+     var scriptUrl = "/dato.php?format=" + format + "&tid=" + parseInt(time);
+     $.ajax({
+        url: scriptUrl,
+        type: 'get',
+        dataType: 'html',
+        async: false,
+        success: function(data) {
+            result = data;
+        } 
+     });
+     return result;
 }
 
 function addNewsArticle(json) {
