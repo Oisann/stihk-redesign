@@ -1,4 +1,5 @@
 <?php
+	error_reporting(0);
 	include('../../config.php');
 	header('Cache-Control: no-cache, must-revalidate');
 	header('Expires: ' . date("D, d M Y G:i:s T", strtotime("+1 week")) );
