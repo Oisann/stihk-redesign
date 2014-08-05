@@ -28,7 +28,7 @@ function updateUker(json) {
 	var uke = new Date().getWeekNumber();
 	$('select#uke').html("");
 	for (property in json) {
-		if(json[property].error !== null) {
+		if(json[property].error) {
 			var err = json[property].error == 'no files found' ? 'Istidene for denne hallen er ikke ute enda.' : json[property].error;
 			$('select#uke').html("<option disabled selected>" + err + "</option>");
 			return;
