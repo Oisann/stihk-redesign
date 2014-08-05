@@ -18,5 +18,6 @@
 		if($uke < 23) { $aar = intval($aar[1]); } else { $aar = intval($aar[0]); };
 		$articles[strtotime($aar . 'W' . $uke)] = array('week' => $uke, 'first' => date("d.m.Y", intval(strtotime($aar . 'W' . $uke))), 'last' => date("d.m.Y", intval(strtotime($aar . 'W' . $uke . ' + 6 days'))));
 	}
+	if(count($articles) == 0) $articles[0] = array('error' => 'no files found', 'time' => time());
 	echo utf8_encode(html_entity_decode(json_encode($articles)));
 ?>
