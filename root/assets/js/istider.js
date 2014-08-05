@@ -31,6 +31,7 @@ function updateUker(json) {
 		if(json[property].error !== null) {
 			var err = json[property].error == 'no files found' ? 'Istidene for denne hallen er ikke ute enda.' : json[property].error;
 			$('select#uke').html("<option disabled selected>" + err + "</option>");
+			return;
 		}
 		var select = "",
 			star = "";
