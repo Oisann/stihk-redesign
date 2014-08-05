@@ -27,8 +27,6 @@ function updateIshaller(json) {
 function updateUker(json) {
 	var uke = new Date().getWeekNumber();
 	$('select#uke').html("");
-	json.sort();
-	json.reverse();
 	for (property in json) {
 		if(json[property].error) {
 			var err = json[property].error == 'no files found' ? 'Istidene for denne hallen er ikke ute enda.' : json[property].error;
