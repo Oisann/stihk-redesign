@@ -32,11 +32,11 @@
 				</tr>
 				<tr>
 					<td><strong>Leangen Arena:</strong></td>
-					<td class="arena">N/A</td>
+					<td class="leangen">N/A</td>
 				</tr>
 				<tr>
 					<td><strong>Leangen Ungdomshall:</strong></td>
-					<td class="ungdomshall">N/A</td>
+					<td class="leangen2">N/A</td>
 				</tr>
 				<tr>
 					<td><strong>Dalgård:</strong></td>
