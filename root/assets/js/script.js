@@ -188,10 +188,9 @@ function timeToDate(format, time) {
         } 
      });*/
      $.get(scriptUrl, function( data ) {
-	console.log(scriptUrl,"----", data);
-	return data;
+	result = data;
      });
-     //return result;
+     if(result != null) return result;
 }
 
 function addNewsArticle(json) {
