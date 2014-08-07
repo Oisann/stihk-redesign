@@ -266,28 +266,27 @@ function updateClock() {
 
 function updateAdressa() {
 	if($('html').hasClass('news')) return; //Save oisann.net for unnecessary traffic and load
-	/*$.ajax({
+	$.ajax({
 		type: "GET",
 		url: adressa_hockey,
 		dataType: "json",
 		success: addAdressaArticle
-	});*/
+	});
 	getUpdateFromExternal('adressa', adressa_hockey);
 }
 
 function updateNews() {
 	if($('html').hasClass('news')) return;
-	/*$.ajax({
+	$.ajax({
 		type: "GET",
 		url: news_url,
 		dataType: "json",
 		success: addNewsArticle
-	});*/
-	getUpdateFromExternal('news', news_url);
+	});
 }
 
 function updateWeather() {
-	/*$.ajax({
+	$.ajax({
 		type: "GET",
 		url: trondheim_url,
 		dataType: "xml",
@@ -298,9 +297,7 @@ function updateWeather() {
 		url: korsvegen_url,
 		dataType: "xml",
 		success: setWeather
-	});*/
-	getUpdateFromExternal('yr', trondheim_url);
-	getUpdateFromExternal('yr', korsvegen_url);
+	});
 }
 
 function setWeather(xml) {
