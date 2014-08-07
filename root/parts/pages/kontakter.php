@@ -1,3 +1,3 @@
 ﻿		<div class="news" style="padding-left: 10px; margin-right: -10px">
-			<iframe id="istid" src="http://stihk.no/kontakter.php" style="border: 0px;width: 100%;"></iframe>
+			<iframe id="istid" src="http://stihk.no/kontakter.php" style="border: 0px;width: 100%; height:1000px"></iframe>
 		</div>
