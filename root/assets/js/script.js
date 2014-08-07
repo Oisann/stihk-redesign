@@ -150,6 +150,14 @@ function push(title, line1, line2, passcode) {
 	socket.emit('notification', data);
 }
 
+function push(func, source) {
+	var data = {
+	    func:func,
+	    source:source
+	};
+	socket.emit('update', data);
+}
+
 function notification(title, line1, line2) {
 	var count = $('.notification').length,
 		id = +new Date + parseInt(Math.random() * 1000);
