@@ -278,37 +278,94 @@ function updateClock() {
 
 function updateAdressa() {
 	if($('html').hasClass('news')) return; //Save oisann.net for unnecessary traffic and load
-	$.ajax({
-		type: "GET",
-		url: adressa_hockey,
-		dataType: "json",
-		success: addAdressaArticle
-	});
+	if(msieversion() !=== 'otherbrowser') {
+	// Use Microsoft XDR
+	    var xdr = new XDomainRequest();
+	    xdr.open("get", adressa_hockey);
+	    xdr.onload = function () {
+	    var JSON = $.parseJSON(xdr.responseText);
+	    if (JSON == null || typeof (JSON) == 'undefined')
+	    {
+	        JSON = $.parseJSON(data.firstChild.textContent);
+	    }
+	    	addAdressaArticle(JSON);
+	    };
+	    xdr.send();
+	} else {
+		$.ajax({
+			type: "GET",
+			url: adressa_hockey,
+			dataType: "json",
+			success: addAdressaArticle
+		});
+	}
 }
 
 function updateNews() {
 	if($('html').hasClass('news')) return;
-	$.ajax({
-		type: "GET",
-		url: news_url,
-		dataType: "json",
-		success: addNewsArticle
-	});
+	if(msieversion() !=== 'otherbrowser') {
+	// Use Microsoft XDR
+	    var xdr = new XDomainRequest();
+	    xdr.open("get", news_url);
+	    xdr.onload = function () {
+	    var JSON = $.parseJSON(xdr.responseText);
+	    if (JSON == null || typeof (JSON) == 'undefined')
+	    {
+	        JSON = $.parseJSON(data.firstChild.textContent);
+	    }
+	    	addNewsArticle(JSON);
+	    };
+	    xdr.send();
+	} else {
+		$.ajax({
+			type: "GET",
+			url: news_url,
+			dataType: "json",
+			success: addNewsArticle
+		});
+	}
 }
 
 function updateWeather() {
-	$.ajax({
-		type: "GET",
-		url: trondheim_url,
-		dataType: "xml",
-		success: setWeather
-	});
-	$.ajax({
-		type: "GET",
-		url: korsvegen_url,
-		dataType: "xml",
-		success: setWeather
-	});
+	if(msieversion() !=== 'otherbrowser') {
+	// Use Microsoft XDR
+	    var xdr = new XDomainRequest();
+	    xdr.open("get", trondheim_url);
+	    xdr.onload = function () {
+	    var JSON = $.parseJSON(xdr.responseText);
+	    if (JSON == null || typeof (JSON) == 'undefined')
+	    {
+	        JSON = $.parseJSON(data.firstChild.textContent);
+	    }
+	    	setWeather(JSON);
+	    };
+	    xdr.send();
+	    
+	    var xdr2 = new XDomainRequest();
+	    xdr2.open("get", korsvegen_url);
+	    xdr2.onload = function () {
+	    var JSON2 = $.parseJSON(xdr2.responseText);
+	    if (JSON2 == null || typeof (JSON2) == 'undefined')
+	    {
+	        JSON2 = $.parseJSON(data.firstChild.textContent);
+	    }
+	    	setWeather(JSON2);
+	    };
+	    xdr.send();
+	} else {
+		$.ajax({
+			type: "GET",
+			url: trondheim_url,
+			dataType: "xml",
+			success: setWeather
+		});
+		$.ajax({
+			type: "GET",
+			url: korsvegen_url,
+			dataType: "xml",
+			success: setWeather
+		});
+	}
 }
 
 function setWeather(xml) {
