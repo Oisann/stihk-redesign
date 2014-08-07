@@ -158,6 +158,18 @@ function getUpdateFromExternal(func, url) {
 	socket.emit('update', data);
 }
 
+function msieversion() {
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
+            return parseInt(ua.substring(msie + 5, ua.indexOf(".", msie)));
+        else                 // If another browser, return 0
+            return 'otherbrowser';
+
+   return false;
+}
+
 function notification(title, line1, line2) {
 	var count = $('.notification').length,
 		id = +new Date + parseInt(Math.random() * 1000);
