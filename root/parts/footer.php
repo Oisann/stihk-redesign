@@ -52,6 +52,4 @@
 		<footer>Copyright Sør-Trøndelag Ishockeykrets &copy; <?php echo date("Y"); ?><br><span class="small">Laget av <a class="normal" target="_blank" href="http://www.jonasrefseth.no/">Jonas Refseth</a></span>
 		</footer>
 	</body>
-	<script src="<?php echo $funksjoner->fix_linking(); ?>assets/js/jquery.marquee.min.js"></script>
-	<script src="<?php echo $funksjoner->fix_linking(); ?>assets/js/script.js"></script>
 </html>
