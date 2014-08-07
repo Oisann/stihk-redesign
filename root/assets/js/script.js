@@ -181,7 +181,7 @@ function timeToDate(format, time) {
      $.ajax({
         url: scriptUrl,
         type: 'get',
-        dataType: 'html',
+        dataType: 'text',
         async: false,
         success: function(data) {
             result = data;
