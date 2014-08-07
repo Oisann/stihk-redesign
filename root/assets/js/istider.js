@@ -1,11 +1,15 @@
 ﻿var selected_ishall = "",
 	season = $("span#season").text().replace("/", "_");
 
-$.ajax({
+/*$.ajax({
 	type: "GET",
 	url: "http://stihk.no/assets/json/ishaller.json",
 	dataType: "json",
 	success: updateIshaller
+});*/
+
+$.get("http://stihk.no/assets/json/ishaller.json", function( data ) {
+	updateIshaller(data);
 });
 
 Date.prototype.getWeekNumber = function(){
@@ -56,11 +60,14 @@ $('select#ishall').change(function() {
 		var name = $(this).text();
 		selected_ishall = $(this).attr("data-id");
 		$('select#uke').html("<option selected disabled><- Velg en ishall først</option>");
-		$.ajax({
+		/*$.ajax({
 			type: "GET",
 			url: "http://stihk.no/assets/json/istider.json?id=" + selected_ishall + "&season=" + season,
 			dataType: "json",
 			success: updateUker
+		});*/
+		$.get("http://stihk.no/assets/json/istider.json?id=" + selected_ishall + "&season=" + season, function( data ) {
+			updateUker(data);
 		});
     });
 });
