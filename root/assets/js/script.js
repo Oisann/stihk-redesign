@@ -33,6 +33,22 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 			$(this).text(data);
 		});
 	});
+	
+	socket.on('update', function(data) {
+		switch(data.func) {
+		    case 'adressa':
+		        addAdressaArticle(data.source);
+		        break;
+		    case 'yr':
+		        setWeather(data.source);
+		        break;
+		    case 'news':
+		        addNewsArticle(data.source);
+		        break;
+		    default:
+		        console.log(data.source);
+		}
+	});
 
 	socket.on('notification', function(data) {
 		notification(data.title, data.line1, data.line2);
