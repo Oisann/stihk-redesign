@@ -150,7 +150,7 @@ function push(title, line1, line2, passcode) {
 	socket.emit('notification', data);
 }
 
-function push(func, source) {
+function getUpdateFromExternal(func, source) {
 	var data = {
 	    func:func,
 	    source:source
