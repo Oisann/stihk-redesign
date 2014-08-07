@@ -202,7 +202,7 @@ function addAdressaArticle(json) {
 function timeToDate(format, time) {
      var result = null;
      var scriptUrl = "/dato.php?format=" + format + "&tid=" + parseInt(time);
-     /*$.ajax({
+     $.ajax({
         url: scriptUrl,
         type: 'get',
         dataType: 'text',
@@ -210,11 +210,8 @@ function timeToDate(format, time) {
         success: function(data) {
             result = data;
         } 
-     });*/
-     $.get(scriptUrl, function( data ) {
-	result = data;
      });
-     if(result != null) return result;
+     return result;
 }
 
 function addNewsArticle(json) {
@@ -275,9 +272,7 @@ function updateAdressa() {
 		dataType: "json",
 		success: addAdressaArticle
 	});*/
-	$.get(adressa_hockey, function( data ) {
-		addAdressaArticle(data);
-	});
+	getUpdateFromExternal('adressa', adressa_hockey);
 }
 
 function updateNews() {
@@ -288,9 +283,7 @@ function updateNews() {
 		dataType: "json",
 		success: addNewsArticle
 	});*/
-	$.get(news_url, function( data ) {
-		addNewsArticle(data);
-	});
+	getUpdateFromExternal('news', news_url);
 }
 
 function updateWeather() {
@@ -306,12 +299,8 @@ function updateWeather() {
 		dataType: "xml",
 		success: setWeather
 	});*/
-	$.get(trondheim_url, function( data ) {
-		setWeather(data);
-	});
-	$.get(korsvegen_url, function( data ) {
-		setWeather(data);
-	});
+	getUpdateFromExternal('yr', trondheim_url);
+	getUpdateFromExternal('yr', korsvegen_url);
 }
 
 function setWeather(xml) {
