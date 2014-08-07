@@ -272,7 +272,6 @@ function updateAdressa() {
 		dataType: "json",
 		success: addAdressaArticle
 	});
-	getUpdateFromExternal('adressa', adressa_hockey);
 }
 
 function updateNews() {
