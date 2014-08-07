@@ -178,7 +178,7 @@ function addAdressaArticle(json) {
 function timeToDate(format, time) {
      var result = null;
      var scriptUrl = "/dato.php?format=" + format + "&tid=" + parseInt(time);
-     $.ajax({
+     /*$.ajax({
         url: scriptUrl,
         type: 'get',
         dataType: 'text',
@@ -186,6 +186,9 @@ function timeToDate(format, time) {
         success: function(data) {
             result = data;
         } 
+     });*/
+     $.get(scriptUrl, function( data ) {
+	result = data;
      });
      return result;
 }
@@ -242,26 +245,32 @@ function updateClock() {
 
 function updateAdressa() {
 	if($('html').hasClass('news')) return; //Save oisann.net for unnecessary traffic and load
-	$.ajax({
+	/*$.ajax({
 		type: "GET",
 		url: adressa_hockey,
 		dataType: "json",
 		success: addAdressaArticle
+	});*/
+	$.get(adressa_hockey, function( data ) {
+		addAdressaArticle(data);
 	});
 }
 
 function updateNews() {
 	if($('html').hasClass('news')) return;
-	$.ajax({
+	/*$.ajax({
 		type: "GET",
 		url: news_url,
 		dataType: "json",
 		success: addNewsArticle
+	});*/
+	$.get(news_url, function( data ) {
+		addNewsArticle(data);
 	});
 }
 
 function updateWeather() {
-	$.ajax({
+	/*$.ajax({
 		type: "GET",
 		url: trondheim_url,
 		dataType: "xml",
@@ -272,6 +281,12 @@ function updateWeather() {
 		url: korsvegen_url,
 		dataType: "xml",
 		success: setWeather
+	});*/
+	$.get(trondheim_url, function( data ) {
+		setWeather(data);
+	});
+	$.get(korsvegen_url, function( data ) {
+		setWeather(data);
 	});
 }
 
