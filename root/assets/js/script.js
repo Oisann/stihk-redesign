@@ -278,7 +278,7 @@ function updateClock() {
 
 function updateAdressa() {
 	if($('html').hasClass('news')) return; //Save oisann.net for unnecessary traffic and load
-	if(msieversion() !=== 'otherbrowser') {
+	if(msieversion() !== 'otherbrowser') {
 	// Use Microsoft XDR
 	    var xdr = new XDomainRequest();
 	    xdr.open("get", adressa_hockey);
@@ -303,7 +303,7 @@ function updateAdressa() {
 
 function updateNews() {
 	if($('html').hasClass('news')) return;
-	if(msieversion() !=== 'otherbrowser') {
+	if(msieversion() !== 'otherbrowser') {
 	// Use Microsoft XDR
 	    var xdr = new XDomainRequest();
 	    xdr.open("get", news_url);
@@ -327,7 +327,7 @@ function updateNews() {
 }
 
 function updateWeather() {
-	if(msieversion() !=== 'otherbrowser') {
+	if(msieversion() !== 'otherbrowser') {
 	// Use Microsoft XDR
 	    var xdr = new XDomainRequest();
 	    xdr.open("get", trondheim_url);
@@ -351,7 +351,7 @@ function updateWeather() {
 	    }
 	    	setWeather(JSON2);
 	    };
-	    xdr.send();
+	    xdr2.send();
 	} else {
 		$.ajax({
 			type: "GET",
