@@ -6,6 +6,7 @@
 <html class="media">
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" >
 		<title><?php echo $title; ?> - Sør-Trøndelag Ishockeykrets</title>
 		<meta name="description" content="<?php echo $description; ?>">
 		<meta name="keywords" content="<?php echo $keywords; ?>">
