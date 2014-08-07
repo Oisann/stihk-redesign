@@ -22,9 +22,6 @@
 		<script src="<?php echo $funksjoner->fix_linking(); ?>assets/js/script.js"></script>
 	</head>
 	<body>
-	<!--[if lt IE 8]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 		<header>
 			<a href="<?php echo $funksjoner->fix_linking(); ?>hjem/" alt="STIHK - Sør-Trøndelag Ishockeykrets"><div class="logo"></div></a>
 			<select class="mininav">
