@@ -18,6 +18,8 @@
 		<link rel="stylesheet" href="<?php echo $funksjoner->fix_linking(); ?>assets/css/style.css">
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+		<script src="<?php echo $funksjoner->fix_linking(); ?>assets/js/jquery.marquee.min.js"></script>
+		<script src="<?php echo $funksjoner->fix_linking(); ?>assets/js/script.js"></script>
 	</head>
 	<body>
 	<!--[if lt IE 8]>
