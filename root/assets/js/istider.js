@@ -31,7 +31,10 @@ function updateIshaller(json) {
 function updateUker(json) {
 	var uke = new Date().getWeekNumber();
 	$('select#uke').html("");
-	if(Object.keys(json).length === 1) $('iframe#istid').attr("src", "./" + season + "/uke_" + json[Object.keys(json)[0]].week + "_" + selected_ishall + ".htm");
+	if(Object.keys(json).length === 1) {
+		var only_week = json[Object.keys(json)[0]].week;
+		if(only_week !== undefined) $('iframe#istid').attr("src", "./" + season + "/uke_" + only_week + "_" + selected_ishall + ".htm");
+	}
 	for (property in json) {
 		if(json[property].error) {
 			var err = json[property].error == 'no files found' ? 'Istidene for denne hallen er ikke ute enda.' : json[property].error;
