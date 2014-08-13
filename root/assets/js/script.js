@@ -4,8 +4,7 @@ var trondheim_url = "https://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondhe
 	symbol_url_start = "http://symbol.yr.no/grafikk/sym/b38/", //Start of weathersymbol. Ends with .png
 	news_url = "http://stihk.no/demo/assets/json/news.json",
 	socket = io.connect('http://www.oisann.net:3000');
-	io.set('transports', [
-     'websocket'
+	socket.set('transports', ['websocket'
    , 'flashsocket'
    , 'htmlfile'
    , 'xhr-polling'
