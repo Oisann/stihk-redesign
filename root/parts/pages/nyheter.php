@@ -23,7 +23,13 @@
 				} else {
 					echo "			<div class=\"byline\">Av: " . htmlentities($row['av']) . " - Laget: " . date("d.m.Y H:i:s", $row['laget']) . "</div>\n";
 				}
-				echo "			<span class=\"nyhetstekts\">" . htmlentities($row['tekst']) . "</span>\n";
+				$display_Text = htmlentities($row['tekst']);
+				$display_Text = str_replace('&quot;', '"', $display_Text);
+				$display_Text = str_replace('&lt;', '<', $display_Text);
+				$display_Text = str_replace('&gt;', '>', $display_Text);
+				$display_Text = str_replace('&#039;', '\'', $display_Text);
+				$display_Text = str_replace('&amp;', '&', $display_Text);
+				echo "			<span class=\"nyhetstekts\">" . $display_Text . "</span>\n";
 				echo "			<div class=\"social\"><input id=\"lenke\" type=\"text\" value=\"http://stihk.no/nyheter/" . $id . "\"> " . $facebook_like . "</div>";
 				$error = false;
 				break;
