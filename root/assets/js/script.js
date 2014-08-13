@@ -4,6 +4,12 @@ var trondheim_url = "https://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondhe
 	symbol_url_start = "http://symbol.yr.no/grafikk/sym/b38/", //Start of weathersymbol. Ends with .png
 	news_url = "http://stihk.no/demo/assets/json/news.json",
 	socket = io.connect('http://www.oisann.net:3000');
+	io.set('transports', [
+     'websocket'
+   , 'flashsocket'
+   , 'htmlfile'
+   , 'xhr-polling'
+   , 'jsonp-polling']);
 $(document).ready(function() { //no need for this, since i load it at the bottom of the page. EH
 	var path = $(location).attr('href');
 	try {
@@ -15,9 +21,9 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	}
 	$('html').addClass(filename);
 	updateClock();
+	updateNews();
 	updateWeather();
 	updateAdressa();
-	updateNews();
 	setInterval(function() {
 		updateWeather();
 	}, 12 * 60000); //update every hour
@@ -279,93 +285,48 @@ function updateClock() {
 function updateAdressa() {
 	if($('html').hasClass('news')) return; //Save oisann.net for unnecessary traffic and load
 	if(msieversion() !== 'otherbrowser') {
-	// Use Microsoft XDR
-	    var xdr = new XDomainRequest();
-	    xdr.open("get", adressa_hockey);
-	    xdr.onload = function () {
-	    var JSON = $.parseJSON(xdr.responseText);
-	    if (JSON == null || typeof (JSON) == 'undefined')
-	    {
-	        JSON = $.parseJSON(data.firstChild.textContent);
-	    }
-	    	addAdressaArticle(JSON);
-	    };
-	    xdr.send();
-	} else {
-		$.ajax({
-			type: "GET",
-			url: adressa_hockey,
-			dataType: "json",
-			success: addAdressaArticle
-		});
+		addAdressaArticle('{ error : "msie not supported" }');
+		return;
 	}
+	$.ajax({
+		type: "GET",
+		url: adressa_hockey,
+		dataType: "json",
+		success: addAdressaArticle
+	});
 }
 
 function updateNews() {
 	if($('html').hasClass('news')) return;
 	if(msieversion() !== 'otherbrowser') {
-	// Use Microsoft XDR
-	    var xdr = new XDomainRequest();
-	    xdr.open("get", news_url);
-	    xdr.onload = function () {
-	    var JSON = $.parseJSON(xdr.responseText);
-	    if (JSON == null || typeof (JSON) == 'undefined')
-	    {
-	        JSON = $.parseJSON(data.firstChild.textContent);
-	    }
-	    	addNewsArticle(JSON);
-	    };
-	    xdr.send();
-	} else {
-		$.ajax({
-			type: "GET",
-			url: news_url,
-			dataType: "json",
-			success: addNewsArticle
-		});
+		addNewsArticle('{ error : "msie not supported" }');
+		return;
 	}
+	$.ajax({
+		type: "GET",
+		url: news_url,
+		dataType: "json",
+		success: addNewsArticle
+	});
 }
 
 function updateWeather() {
 	if(msieversion() !== 'otherbrowser') {
-	// Use Microsoft XDR
-	    var xdr = new XDomainRequest();
-	    xdr.open("get", trondheim_url);
-	    xdr.onload = function () {
-	    var JSON = $.parseJSON(xdr.responseText);
-	    if (JSON == null || typeof (JSON) == 'undefined')
-	    {
-	        JSON = $.parseJSON(data.firstChild.textContent);
-	    }
-	    	setWeather(JSON);
-	    };
-	    xdr.send();
-	    
-	    var xdr2 = new XDomainRequest();
-	    xdr2.open("get", korsvegen_url);
-	    xdr2.onload = function () {
-	    var JSON2 = $.parseJSON(xdr2.responseText);
-	    if (JSON2 == null || typeof (JSON2) == 'undefined')
-	    {
-	        JSON2 = $.parseJSON(data.firstChild.textContent);
-	    }
-	    	setWeather(JSON2);
-	    };
-	    xdr2.send();
-	} else {
-		$.ajax({
-			type: "GET",
-			url: trondheim_url,
-			dataType: "xml",
-			success: setWeather
-		});
-		$.ajax({
-			type: "GET",
-			url: korsvegen_url,
-			dataType: "xml",
-			success: setWeather
-		});
+		setWeather('');
+		return;
 	}
+	$.ajax({
+		type: "GET",
+		url: trondheim_url,
+		dataType: "xml",
+		success: setWeather
+	});
+	$.ajax({
+		type: "GET",
+		url: korsvegen_url,
+		dataType: "xml",
+		success: setWeather
+	});
 }
 
 function setWeather(xml) {
