@@ -244,7 +244,9 @@ function addNewsArticle(json) {
 }
 
 function shorten(text) {
-	var length = text !== null ? text.length : 0;
+	if(text === undefined || text === null || text === '')
+		return '...';
+	var length = text.length;
 	if(length > 130) {
 		var innledning = text.split(" "),
 			result = "";
