@@ -322,6 +322,10 @@ input#lenke {
 	text-align: right;
 }
 
+#istid {
+	height: 1000px;
+}
+
 @-webkit-keyframes loading {
 	from { background-position:  0px  0px; }
 		to { background-position: 0px -570px; }
