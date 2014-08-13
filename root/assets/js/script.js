@@ -294,10 +294,6 @@ function updateAdressa() {
 
 function updateNews() {
 	if($('html').hasClass('news')) return;
-	if(msieversion() !== 'otherbrowser') {
-		addNewsArticle('{ error : "msie not supported" }');
-		return;
-	}
 	$.ajax({
 		type: "GET",
 		url: news_url,
