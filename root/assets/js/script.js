@@ -1,6 +1,6 @@
-var trondheim_url = "http://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondheim/Trondheim", //Yr.no mirrors > Allowing cross domain
-	korsvegen_url = "http://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Melhus/Korsvegen",
-	adressa_hockey = "http://oisann.net/adressa/ishockey/",
+var trondheim_url = "https://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondheim/Trondheim", //Yr.no mirrors > Allowing cross domain
+	korsvegen_url = "https://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Melhus/Korsvegen",
+	adressa_hockey = "https://oisann.net/adressa/ishockey/",
 	symbol_url_start = "http://symbol.yr.no/grafikk/sym/b38/", //Start of weathersymbol. Ends with .png
 	news_url = "http://stihk.no/demo/assets/json/news.json",
 	socket = io.connect('http://www.oisann.net:3000');
@@ -303,12 +303,27 @@ function updateAdressa() {
 
 function updateNews() {
 	if($('html').hasClass('news')) return;
-	$.ajax({
-		type: "GET",
-		url: news_url,
-		dataType: "json",
-		success: addNewsArticle
-	});
+	if(msieversion() !== 'otherbrowser') {
+	// Use Microsoft XDR
+	    var xdr = new XDomainRequest();
+	    xdr.open("get", news_url);
+	    xdr.onload = function () {
+	    var JSON = $.parseJSON(xdr.responseText);
+	    if (JSON == null || typeof (JSON) == 'undefined')
+	    {
+	        JSON = $.parseJSON(data.firstChild.textContent);
+	    }
+	    	addNewsArticle(JSON);
+	    };
+	    xdr.send();
+	} else {
+		$.ajax({
+			type: "GET",
+			url: news_url,
+			dataType: "json",
+			success: addNewsArticle
+		});
+	}
 }
 
 function updateWeather() {
