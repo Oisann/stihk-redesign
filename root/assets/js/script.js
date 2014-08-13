@@ -244,7 +244,7 @@ function addNewsArticle(json) {
 }
 
 function shorten(text) {
-	var length = text.length;
+	var length = text !== null ? text.length : 0;
 	if(length > 130) {
 		var innledning = text.split(" "),
 			result = "";
