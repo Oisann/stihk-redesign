@@ -3,6 +3,7 @@
 	header('Cache-Control: no-cache, must-revalidate');
 	header('Expires: ' . date("D, d M Y G:i:s T", strtotime("+1 week")) );
 	header('Content-type: application/json, charset=utf-8');
+	header("Access-Control-Allow-Origin: *");
 
 	$mysql_connection = mysql_connect($mysql_host,$mysql_user,$mysql_password);
 	if (!$mysql_connection) die('{ "error":"mysql connection failed" }');
