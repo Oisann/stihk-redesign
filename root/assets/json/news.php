@@ -16,7 +16,7 @@
 	$articles = array();
 	$counter = 0;
 	while ($row = mysql_fetch_array($mysql_query)) {
-		$articles[$counter] = array('id' => intval($row['id']), 'date' => intval($row['laget']), 'changed' => intval($row['endret']), 'type' => intval($row['type']), 'headline' => htmlentities($row['overskrift']), 'text' => htmlentities(strip_tags($row['tekst'])));
+		$articles[$counter] = array('id' => intval($row['id']), 'date' => intval($row['laget']), 'changed' => intval($row['endret']), 'type' => intval($row['type']), 'headline' => htmlentities(addslashes($row['overskrift'])), 'text' => htmlentities(strip_tags(addslashes($row['tekst']))));
 		$counter++;
 	}
 	mysql_close($mysql_connection);
