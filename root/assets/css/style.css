@@ -66,12 +66,6 @@ header {
 	-moz-filter: blur(8px);
 	-o-filter: blur(8px);
 	filter: blur(8px);
-	
-	/*	Rotate image 180 degrees	*/
-	-webkit-transform: rotate(180deg); 
-	-moz-transform: rotate(180deg);
-	-o-transform: rotate(180deg);
-	-ms-transform: rotate(180deg);
 }
 
 .mininav {
