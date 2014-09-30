@@ -65,10 +65,10 @@
 				</tr>
 			</table>
 			<div class="login hidden">
-				<form method="post" action="">
-					<input type="text" name="username" value="" placeholder="Brukernavn" />
-					<input type="password" name="password" value="" placeholder="Passord" />
-					<input type="submit" name="submit" value="Logg inn" />
+				<form id="login" method="post" action="">
+					<input type="text" id="user" name="username" value="" placeholder="Brukernavn" />
+					<input type="password" id="pass" name="password" value="" placeholder="Passord" />
+					<input type="submit" id="logg-inn-knapp" name="submit" value="Logg inn" />
 				</form>
 			</div>
 			<div class="morenav hidden">
