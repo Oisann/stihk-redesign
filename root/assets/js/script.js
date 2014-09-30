@@ -76,6 +76,14 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 		window.open('http://www.yr.no/sted/Norge/S%C3%B8r-Tr%C3%B8ndelag/Melhus/Korsvegen/','_blank');
 	});
 	
+	$('#logg-inn-knapp').click(function() {
+		var	login-form = $('#login'),
+			user = login-form.find('#user'),
+			pass = login-form.find('#pass'),
+		window.location = 'http://' + user + ':' + pass + '@stihk.no/kontor/';
+		console.log('[Warning]', 'This is an untested method.');
+	});
+	
 	$('#weather-trondheim').click(function() {
 		window.open('http://www.yr.no/sted/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondheim/Trondheim/','_blank');
 	});
