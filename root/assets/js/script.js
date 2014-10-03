@@ -77,9 +77,9 @@ $(document).ready(function() { //no need for this, since i load it at the bottom
 	});
 	
 	$('#logg-inn-knapp').click(function() {
-		var	login-form = $('#login'),
-			user = login-form.find('#user'),
-			pass = login-form.find('#pass'),
+		var	loginForm = $('#login'),
+			user = loginForm.find('#user'),
+			pass = loginForm.find('#pass'),
 		window.location = 'http://' + user + ':' + pass + '@stihk.no/kontor/';
 		console.log('[Warning]', 'This is an untested method.');
 	});
