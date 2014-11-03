@@ -350,14 +350,12 @@ function setWeather(xml) {
 		$('span.temperature').each(function() {
 			var grader = localStorage.getItem($(this).attr('location'));
 			$(this).text(grader);
-			console.log('temp',$(this));
 		});
 		$('.weather table tr td').each(function() {
 			if($(this).attr('location') !== undefined) {
 				$(this).removeClass('center');
 				var image = localStorage.getItem($(this).attr('location') + '_img');
 				$(this).html(image);
-				console.log('image', $(this));
 			}
 		});
 		return;
