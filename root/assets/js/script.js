@@ -349,9 +349,11 @@ function setWeather(xml) {
 			$(this).text(grader);
 		});
 		$('.weather table tr td').each(function() {
-			$(this).removeClass('center');
-			var image = localStorage.getItem($(this).attr('location') + '_img');
-			$(this).html(image);
+			if($(this).attr('location') !== undefined) {
+				$(this).removeClass('center');
+				var image = localStorage.getItem($(this).attr('location') + '_img');
+				$(this).html(image);
+			}
 		});
 		return;
 	}
