@@ -12,7 +12,6 @@ var current_timestamp = Math.round((new Date()).getTime() / 1000),
 	ls_korsvegen = localStorage.getItem('korsvegen'),
 	ls_trondheim_img = localStorage.getItem('trondheim_img'),
 	ls_korsvegen_img = localStorage.getItem('korsvegen_img'),
-	ls_newsfeed = localStorage.getItem('newsfeed'),
 	lastupdate = (ls_update == undefined ? 0 : ls_update),
 	doUpdate = lastupdate <= (current_timestamp - 3600);
 
@@ -215,9 +214,6 @@ function startNewsfeed() {
 		pauseOnHover: true,
 		duplicated: true
 	});
-	if(doUpdate) {
-		updateLocalStorage('newsfeed', $('.newsfeed').html());
-	}
 }
 
 var adressa_ready = false,
@@ -292,10 +288,7 @@ function updateClock() {
 	datetext = d.toTimeString();
 	datetext = datetext.split(' ')[0];
 	clock = $('.clock');
-	if(!doUpdate) {
-		$('.newsfeed').html(ls_newsfeed);
-		startNewsfeed();
-	} else if(adressa_ready && stihknews_ready) {
+	if(adressa_ready && stihknews_ready) {
 		adressa_ready = false;
 		stihknews_ready = false;
 		startNewsfeed();
