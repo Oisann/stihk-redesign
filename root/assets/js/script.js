@@ -323,7 +323,10 @@ function updateNews() {
 }
 
 function updateWeather() {
-	if(!doUpdate) return;
+	if(!doUpdate) {
+		setWeather('');
+		return;
+	}
 	if(msieversion() !== 'otherbrowser') {
 		setWeather('');
 		return;
