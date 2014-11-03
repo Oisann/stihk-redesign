@@ -4,6 +4,17 @@ var trondheim_url = "https://oisann.net/yr/Norge/S%C3%B8r-Tr%C3%B8ndelag/Trondhe
 	symbol_url_start = "http://symbol.yr.no/grafikk/sym/b38/", //Start of weathersymbol. Ends with .png
 	news_url = "http://stihk.no/demo/assets/json/news.json",
 	socket = io.connect('http://www.oisann.net:3000');
+
+//Performance enhancements
+var current_timestamp = Math.round((new Date()).getTime() / 1000),
+	ls_update = localStorage.getItem('updatetime'),
+	ls_trondheim = localStorage.getItem('trondheim'),
+	ls_korsvegen = localStorage.getItem('korsvegen'),
+	ls_trondheim_img = localStorage.getItem('trondheim_img'),
+	ls_korsvegen_img = localStorage.getItem('korsvegen_img'),
+	lastupdate = (ls_update == undefined ? 0 : ls_update),
+	doUpdate = lastupdate <= (current_timestamp - 3600);
+
 $(document).ready(function() { //no need for this, since i load it at the bottom of the page. EH
 	var path = $(location).attr('href');
 	try {
@@ -304,6 +315,7 @@ function updateNews() {
 }
 
 function updateWeather() {
+	if(!doUpdate) return;
 	if(msieversion() !== 'otherbrowser') {
 		setWeather('');
 		return;
@@ -323,11 +335,24 @@ function updateWeather() {
 }
 
 function setWeather(xml) {
+	if(!doUpdate) {
+		$('span.temperature').each(function() {
+			var grader = localStorage.getItem($(this).attr('location'));
+			$(this).text(grader);
+		});
+		$('.weather table tr td').each(function() {
+			$(this).removeClass('center');
+			var image = localStorage.getItem($(this).attr('location') + '_img');
+			$(this).html(image);
+		});
+		return;
+	}
 	var location = $(xml).find("weatherdata location name").first().text().toLowerCase();
 	$(xml).find("weatherdata tabular time temperature").first().each(function() {
 		var span = $(this);
 		$('span.temperature').each(function() {
 			if($(this).attr('location') === location) {
+				updateLocalStorage(location, span.attr('value'));
 				$(this).text(span.attr('value'));
 			}
 		});
@@ -337,8 +362,16 @@ function setWeather(xml) {
 		$('.weather table tr td').each(function() {
 			if($(this).attr('location') === location) {
 				$(this).removeClass('center');
-				$(this).html('<img src="' + symbol_url_start + span.attr('var') + '.png" alt="' + span.attr('name') + '" />');
+				var html = '<img src="' + symbol_url_start + span.attr('var') + '.png" alt="' + span.attr('name') + '" />';
+				updateLocalStorage(location + '_img', html);
+				$(this).html(html);
 			}
 		});
 	});
+}
+
+function updateLocalStorage(where, what) {
+	var time = Math.round((new Date()).getTime() / 1000);
+	localStorage.setItem('updatetime', time);
+	localStorage.setItem(where, what);
 }
