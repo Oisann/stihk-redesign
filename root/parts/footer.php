@@ -52,9 +52,6 @@
 					<td><a href="http://rihk.no/">Rosenborg Ishockeyklubb</a></td>
 				</tr>
 				<tr>
-					<td><a href="http://rihk.no/">Rosenborg Ishockeyklubb</a></td>
-				</tr>
-				<tr>
 					<td><a href="http://www.jentehockey.no/">STIHK Jenter</a></td>
 				</tr>
 				<tr>
