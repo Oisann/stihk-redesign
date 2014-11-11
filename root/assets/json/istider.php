@@ -18,6 +18,7 @@
 		$uke = intval(str_replace('.htm', '', $uke));
 		$aar = explode("_", $sesong);
 		if($uke < 23) { $aar = intval($aar[1]); } else { $aar = intval($aar[0]); };
+		if($uke <= 9) { $uke = '0' . $uke; }
 		$articles[strtotime($aar . 'W' . $uke)] = array('week' => $uke, 'first' => date("d.m.Y", intval(strtotime($aar . 'W' . $uke))), 'last' => date("d.m.Y", intval(strtotime($aar . 'W' . $uke . ' + 6 days'))));
 	}
 	if(count($articles) == 0) $articles['error'] = array('error' => 'no files found', 'time' => time());
