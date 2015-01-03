@@ -78,9 +78,10 @@ function updateUker(json) {
 			$('iframe#istid').attr("src", "./" + season + "/uke_" + (uke<=9?"0"+uke:uke) + "_" + selected_ishall + ".htm");
 		}
 		$('select#uke').append("<option data-week=\"" + json[property].week + "\" " + select + ">Uke " + json[property].week + star + " - " + json[property].first + "-" + json[property].last + "</option>");
-		if($.urlParam('w') === json[property].week) {
+		if($.urlParam('u') === json[property].week) {
 			$('select#uke')[0].selectedIndex = index;
 			$('select#uke').trigger("change");
+			$.setUrlParam('u', json[property].week);
 		}
 		index++;
 	}
