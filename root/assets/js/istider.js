@@ -1,6 +1,4 @@
-﻿var hasChanged = false;
-var canHallChange = true;
-$.urlParam = function(name){
+﻿$.urlParam = function(name){
     var results = new RegExp('[\?&#]' + name + '=([^&#]*)').exec(window.location.href);
     if (results===null){
 	return null;
@@ -15,17 +13,11 @@ $.setUrlParam = function(param, data) {
 		return null;
 	} else {
 		window.location.hash = (window.location.hash).replace(param + '=' + before[1], param + '=' + data);
-		hasChanged = true;
-		console.log(param, data);
 		return true;
 	}
 }
 
-if(window.location.hash=="") {
-	window.location.hash = '#h=n/a&u=n/a'; //add a shareable settings
-	hasChanged = true;
-	canHallChange = false;
-}
+if(window.location.hash=="") window.location.hash = '#h=n/a&u=n/a'; //add a shareable settings
 
 var selected_ishall = "",
 	season = $("span#season").text().replace("/", "_");
@@ -82,7 +74,7 @@ function updateUker(json) {
 			select = "selected";
 			star = "*";
 			$('iframe#istid').attr("src", "./" + season + "/uke_" + (uke<=9?"0"+uke:uke) + "_" + selected_ishall + ".htm");
-			if(hasChanged) $.setUrlParam('u', (uke<=9?"0"+uke:uke));
+			$.setUrlParam('u', (uke<=9?"0"+uke:uke));
 		}
 		$('select#uke').append("<option data-week=\"" + json[property].week + "\" " + select + ">Uke " + json[property].week + star + " - " + json[property].first + "-" + json[property].last + "</option>");
 		if($.urlParam('u') === json[property].week) {
@@ -96,10 +88,7 @@ $('select#uke').change(function() {
 	$("select#uke option:selected" ).each(function() {
 		var selected_week = $(this).attr("data-week");
 		$('iframe#istid').attr("src", "./" + season + "/uke_" + selected_week + "_" + selected_ishall + ".htm");
-		if(canHallChange) {
-			$.setUrlParam('u', selected_week);
-			canHallChange = false;
-		}
+		$.setUrlParam('u', selected_week);
 	});
 });
 
