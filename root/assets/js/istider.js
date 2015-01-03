@@ -1,5 +1,5 @@
 ﻿var hasChanged = false;
-var canHallChange = false;
+var canHallChange = true;
 $.urlParam = function(name){
     var results = new RegExp('[\?&#]' + name + '=([^&#]*)').exec(window.location.href);
     if (results===null){
@@ -21,7 +21,11 @@ $.setUrlParam = function(param, data) {
 	}
 }
 
-if(window.location.hash=="") window.location.hash = '#h=n/a&u=n/a'; //add a shareable settings
+if(window.location.hash=="") {
+	window.location.hash = '#h=n/a&u=n/a'; //add a shareable settings
+	hasChanged = true;
+	canHallChange = false;
+}
 
 var selected_ishall = "",
 	season = $("span#season").text().replace("/", "_");
@@ -94,7 +98,7 @@ $('select#uke').change(function() {
 		$('iframe#istid').attr("src", "./" + season + "/uke_" + selected_week + "_" + selected_ishall + ".htm");
 		if(canHallChange) {
 			$.setUrlParam('u', selected_week);
-			canHallChange = true;
+			canHallChange = false;
 		}
 	});
 });
