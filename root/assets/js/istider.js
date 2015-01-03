@@ -18,7 +18,7 @@ $.setUrlParam = function(param, data) {
 	}
 }
 
-if(window.location.hash=="") window.location.hash = '#h=null&u=null'; //add a shareable settings
+if(window.location.hash=="") window.location.hash = '#h=n/a&u=n/a'; //add a shareable settings
 
 var selected_ishall = "",
 	season = $("span#season").text().replace("/", "_");
@@ -81,6 +81,7 @@ function updateUker(json) {
 		if($.urlParam('u') === json[property].week) {
 			$('select#uke')[0].selectedIndex = index;
 			$('select#uke').trigger("change");
+			$.setUrlParam('u', json[property].week);
 		}
 		index++;
 	}
