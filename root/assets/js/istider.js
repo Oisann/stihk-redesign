@@ -15,6 +15,7 @@ $.setUrlParam = function(param, data) {
 	} else {
 		window.location.hash = (window.location.hash).replace(param + '=' + before[1], param + '=' + data);
 		hasChanged = true;
+		console.log(param, data);
 		return true;
 	}
 }
