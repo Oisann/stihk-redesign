@@ -18,7 +18,7 @@ $.setUrlParam = function(param, data) {
 	}
 }
 
-if(window.location.hash=="") window.location.hash = '#h=null&w=null'; //add a shareable settings
+if(window.location.hash=="") window.location.hash = '#h=null&u=null'; //add a shareable settings
 
 var selected_ishall = "",
 	season = $("span#season").text().replace("/", "_");
@@ -90,7 +90,7 @@ $('select#uke').change(function() {
 	$("select#uke option:selected" ).each(function() {
 		var selected_week = $(this).attr("data-week");
 		$('iframe#istid').attr("src", "./" + season + "/uke_" + selected_week + "_" + selected_ishall + ".htm");
-		$.setUrlParam('q', selected_week);
+		$.setUrlParam('u', selected_week);
 	});
 });
 
