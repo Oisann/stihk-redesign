@@ -55,6 +55,9 @@ function updateUker(json) {
 $('select#uke').change(function() {
 	$("select#uke option:selected" ).each(function() {
 		var selected_week = $(this).attr("data-week");
+		console.log(selected_week);
+		if(selected_week <= 9) selected_week = "0" + selected_week;
+		console.log(selected_week);
 		$('iframe#istid').attr("src", "./" + season + "/uke_" + selected_week + "_" + selected_ishall + ".htm");
 	});
 });
