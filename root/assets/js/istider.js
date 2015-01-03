@@ -43,7 +43,7 @@ Date.prototype.getWeekNumber = function(){
 
 function updateIshaller(json) {
 	$('select#ishall').html("<option data-id=\"NaN\" selected disabled> - Velg en ishall - </option>");
-	var index = 0;
+	var index = 1;
 	for (property in json) {
 		var disabled = "";
 		if(!json[property].enabled) disabled = " disabled";
@@ -63,7 +63,7 @@ function updateUker(json) {
 		var only_week = json[Object.keys(json)[0]].week;
 		if(only_week !== undefined) $('iframe#istid').attr("src", "./" + season + "/uke_" + only_week + "_" + selected_ishall + ".htm");
 	}
-	var index = 0;
+	var index = 1;
 	for (property in json) {
 		if(json[property].error) {
 			var err = json[property].error == 'no files found' ? 'Istidene for denne hallen er ikke ute enda.' : json[property].error;
