@@ -1,4 +1,5 @@
-﻿$.urlParam = function(name){
+﻿var hasChanged = false;
+$.urlParam = function(name){
     var results = new RegExp('[\?&#]' + name + '=([^&#]*)').exec(window.location.href);
     if (results===null){
 	return null;
@@ -13,7 +14,7 @@ $.setUrlParam = function(param, data) {
 		return null;
 	} else {
 		window.location.hash = (window.location.hash).replace(param + '=' + before[1], param + '=' + data);
-		
+		hasChanged = true;
 		return true;
 	}
 }
@@ -75,11 +76,11 @@ function updateUker(json) {
 			select = "selected";
 			star = "*";
 			$('iframe#istid').attr("src", "./" + season + "/uke_" + (uke<=9?"0"+uke:uke) + "_" + selected_ishall + ".htm");
-			$.setUrlParam('u', (uke<=9?"0"+uke:uke));
+			if(hasChanged) $.setUrlParam('u', (uke<=9?"0"+uke:uke));
 		}
 		$('select#uke').append("<option data-week=\"" + json[property].week + "\" " + select + ">Uke " + json[property].week + star + " - " + json[property].first + "-" + json[property].last + "</option>");
 		if($.urlParam('u') === json[property].week) {
-			$('select#uke')[0].selectedIndex = $("select#uke option:selected").index();
+			$('select#uke')[0].selectedIndex = $('select#uke option:selected').index();
 			$('select#uke').trigger("change");
 		}
 	}
