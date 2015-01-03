@@ -1,4 +1,5 @@
 ﻿$.urlParam = function(name){
+	return null;
     var results = new RegExp('[\?&#]' + name + '=([^&#]*)').exec(window.location.href);
     if (results===null){
 	return null;
@@ -8,6 +9,7 @@
 }
 
 $.setUrlParam = function(param, data) {
+	return null;
 	var before = new RegExp('[\?&#]' + param + '=([^&#]*)').exec(window.location.hash);
 	if(before===null) {
 		return null;
@@ -17,7 +19,7 @@ $.setUrlParam = function(param, data) {
 	}
 }
 
-if(window.location.hash=="") window.location.hash = '#h=n/a&u=n/a'; //add a shareable settings
+if(window.location.hash=="" && false) window.location.hash = '#h=n/a&u=n/a'; //add a shareable settings
 
 var selected_ishall = "",
 	season = $("span#season").text().replace("/", "_");
