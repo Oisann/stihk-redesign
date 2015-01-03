@@ -81,7 +81,6 @@ function updateUker(json) {
 		if($.urlParam('u') === json[property].week) {
 			$('select#uke')[0].selectedIndex = index;
 			$('select#uke').trigger("change");
-			$.setUrlParam('u', json[property].week);
 		}
 		index++;
 	}
@@ -107,7 +106,7 @@ $('select#ishall').change(function() {
 			success: updateUker
 		});*/
 		$.get("http://stihk.no/assets/json/istider.json?id=" + selected_ishall + "&season=" + season, function( data ) {
-			$.setUrlParam('h', selected_ishall);
+			if($.urlParam('h') !== selected_ishall) $.setUrlParam('h', selected_ishall);
 			updateUker(data);
 		});
     });
