@@ -1,4 +1,5 @@
 ﻿var hasChanged = false;
+var canHallChange = false;
 $.urlParam = function(name){
     var results = new RegExp('[\?&#]' + name + '=([^&#]*)').exec(window.location.href);
     if (results===null){
@@ -91,7 +92,10 @@ $('select#uke').change(function() {
 	$("select#uke option:selected" ).each(function() {
 		var selected_week = $(this).attr("data-week");
 		$('iframe#istid').attr("src", "./" + season + "/uke_" + selected_week + "_" + selected_ishall + ".htm");
-		$.setUrlParam('u', selected_week);
+		if(canHallChange) {
+			$.setUrlParam('u', selected_week);
+			canHallChange = true;
+		}
 	});
 });
 
