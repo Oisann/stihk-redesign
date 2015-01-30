@@ -372,9 +372,6 @@ input#lenke {
 	html.media .background, .clock {
 		top: 127px;
 	}
-	.background {
-		background: url(../img/lokkehockey-2015-2.png) no-repeat top;
-	}
 	html.media .morenav {
 		right: 13%;
 		top: 120px;
