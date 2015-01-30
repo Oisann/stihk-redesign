@@ -208,7 +208,7 @@ function addNewsfeedItem(title, text, link) {
 }
 
 function startNewsfeed() {
-	var scrollspeed = $('.newsfeed').text().length * 100 - (300000);
+	var scrollspeed = $('.newsfeed').text().length * 50;
 	$('.newsfeed').marquee({
 		duration: scrollspeed,
 		pauseOnHover: true,
