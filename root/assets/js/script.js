@@ -301,8 +301,18 @@ function updateAdressa() {
 	if($('html').hasClass('news')) return; //Save oisann.net for unnecessary traffic and load
 	if(msieversion() !== 'otherbrowser') {
 		console.log('IE:', msieversion());
-		/*addAdressaArticle('{ error : "msie not supported" }');
-		return;*/
+		$.ajax({
+			type: "GET",
+			url: adressa_hockey,
+			dataType: "json",
+			success: addAdressaArticle
+		}).done(function( data ) {
+		    console.log('DONE!');
+		 }).fail(function(jqXHR, textStatus, errorThrown) {
+		    if(useAlertMessaging) alert('error: ' + jqXHR.responseText);
+		 });
+		//addAdressaArticle('{ error : "msie not supported" }');
+		return;
 	}
 	$.ajax({
 		type: "GET",
