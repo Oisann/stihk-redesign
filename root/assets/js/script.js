@@ -309,7 +309,7 @@ function updateAdressa() {
 		}).done(function( data ) {
 		    console.log('DONE!');
 		 }).fail(function(jqXHR, textStatus, errorThrown) {
-		    if(useAlertMessaging) alert('error: ' + jqXHR.responseText);
+		    console.log('error: ' + jqXHR.responseText);
 		 });
 		//addAdressaArticle('{ error : "msie not supported" }');
 		return;
