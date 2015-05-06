@@ -14,6 +14,7 @@ var current_timestamp = Math.round((new Date()).getTime() / 1000),
 	ls_korsvegen_img = localStorage.getItem('korsvegen_img'),
 	lastupdate = (ls_update == undefined ? 0 : ls_update),
 	doUpdate = lastupdate <= (current_timestamp - 3600);
+	$.support.cors = true;
 
 $(document).ready(function() { //no need for this, since i load it at the bottom of the page. EH
 	var path = $(location).attr('href');
