@@ -301,8 +301,8 @@ function updateAdressa() {
 	if($('html').hasClass('news')) return; //Save oisann.net for unnecessary traffic and load
 	if(msieversion() !== 'otherbrowser') {
 		console.log('IE:', msieversion());
-		addAdressaArticle('{ error : "msie not supported" }');
-		return;
+		/*addAdressaArticle('{ error : "msie not supported" }');
+		return;*/
 	}
 	$.ajax({
 		type: "GET",
